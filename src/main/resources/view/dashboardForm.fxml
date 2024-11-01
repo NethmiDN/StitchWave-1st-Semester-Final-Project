@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stitchwave1stsemesterfinalproject.controller.DashboardFormController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1366.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../assets/img/loginPage.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="ap" layoutX="301.0" layoutY="34.0" prefHeight="700.0" prefWidth="1016.0" style="-fx-background-radius: 18; -fx-background-color: #F3F3E0;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <VBox layoutX="51.0" layoutY="35.0" prefHeight="700.0" prefWidth="250.0" style="-fx-background-radius: 30;">
+         <children>
+            <VBox prefHeight="700.0" prefWidth="250.0" style="-fx-background-radius: 17; -fx-background-color: #BCF2F6;">
+               <children>
+                  <AnchorPane prefHeight="75.0" prefWidth="248.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="-4.0" prefHeight="83.0" prefWidth="254.0" text="STITCHWAVE">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="24.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.4557522123893805" centerY="0.8484848412600431" radius="0.5">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.07749902456998825" green="0.03559454157948494" blue="0.8736842274665833" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                           <effect>
+                              <DropShadow radius="8.83" width="16.32" />
+                           </effect>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="empbtn" mnemonicParsing="false" onAction="#empbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Employee">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9578947424888611" green="0.9366081953048706" blue="0.9366081953048706" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Button fx:id="stylebtn" mnemonicParsing="false" onAction="#stylebtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Style">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9368420839309692" green="0.9194931983947754" blue="0.9194931983947754" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="sewnclothesstockbtn" mnemonicParsing="false" onAction="#sewnclothesstockbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Sewn Clothes Stock">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9263157844543457" green="0.9091618061065674" blue="0.9091618061065674" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="fabricbtn" mnemonicParsing="false" onAction="#fabricbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Fabric">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9263157844543457" green="0.9057310223579407" blue="0.9057310223579407" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="supplierorderbtn" mnemonicParsing="false" onAction="#supplierorderbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Supplier Order">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9263157844543457" green="0.9057310223579407" blue="0.9057310223579407" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="fabricorderdetailbtn" mnemonicParsing="false" onAction="#fabricorderdetailbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Fabric Order Details">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9263157844543457" green="0.9091618061065674" blue="0.9091618061065674" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="supplierbtn" mnemonicParsing="false" onAction="#supplierbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Supplier">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9368420839309692" green="0.9160233736038208" blue="0.9160233736038208" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="customerbtn" mnemonicParsing="false" onAction="#customerbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Customer">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9368420839309692" green="0.9090838432312012" blue="0.9090838432312012" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="orderbtn" mnemonicParsing="false" onAction="#orderbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Orders">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9263157844543457" green="0.8988693952560425" blue="0.8988693952560425" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="paymentbtn" mnemonicParsing="false" onAction="#paymentbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Payment">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9157894849777222" green="0.8954386115074158" blue="0.8954386115074158" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="clothesorderdetailbtn" mnemonicParsing="false" onAction="#clothesorderdetailbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Clothes Order Details">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.9157894849777222" green="0.8988304138183594" blue="0.8988304138183594" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

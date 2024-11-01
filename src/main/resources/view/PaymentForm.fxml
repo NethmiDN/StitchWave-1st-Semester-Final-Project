@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paymentap" prefHeight="698.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stitchwave1stsemesterfinalproject.controller.PaymentFormController">
+   <children>
+      <HBox layoutX="14.0" layoutY="41.0" prefHeight="30.0" prefWidth="337.0">
+         <children>
+            <Label fx:id="paymentidlbl" prefHeight="31.0" prefWidth="99.0" text="Payment Id">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblid" prefHeight="28.0" prefWidth="218.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="72.0" prefHeight="34.0" prefWidth="530.0">
+         <children>
+            <Label fx:id="amountlbl" prefHeight="41.0" prefWidth="99.0" text="Amount">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amounttxt" prefHeight="26.0" prefWidth="422.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="107.0" prefHeight="34.0" prefWidth="370.0">
+         <children>
+            <Label fx:id="datelbl" prefHeight="41.0" prefWidth="99.0" text="Date">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="paymentdate" prefHeight="28.0" prefWidth="218.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="resetbtn" layoutX="63.0" layoutY="149.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="dltbtn" layoutX="303.0" layoutY="149.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="updatebtn" layoutX="535.0" layoutY="149.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="savebtn" layoutX="773.0" layoutY="149.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Button>
+      <TableView fx:id="paymenttable" layoutX="63.0" layoutY="198.0" onMouseClicked="#onClickTable" prefHeight="483.0" prefWidth="870.0">
+         <columns>
+            <TableColumn fx:id="idclmn" prefWidth="158.39997100830078" text="Payment Id" />
+            <TableColumn fx:id="amountclmn" prefWidth="480.8000183105469" text="Amount (Rs.)" />
+            <TableColumn fx:id="dateclmn" prefWidth="230.39996337890625" text="Date" />
+         </columns>
+      </TableView>
+      <ImageView fx:id="iconimg" fitHeight="111.0" fitWidth="124.0" layoutX="841.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/img/logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lb" layoutX="485.0" layoutY="14.0" text="Payment Form" textFill="#343131">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
