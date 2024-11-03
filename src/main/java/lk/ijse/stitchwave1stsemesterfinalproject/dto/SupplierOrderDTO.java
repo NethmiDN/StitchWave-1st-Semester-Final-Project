@@ -8,5 +8,5 @@ import lombok.*;
 @Getter
 @Setter
 
-public class StyleDTO {
+public class SupplierOrderDTO {
 }

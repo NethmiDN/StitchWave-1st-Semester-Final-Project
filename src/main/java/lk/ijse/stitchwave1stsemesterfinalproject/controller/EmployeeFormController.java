@@ -214,7 +214,7 @@ public class EmployeeFormController implements Initializable {
             contacttxt.setStyle(contacttxt.getStyle() + ";-fx-border-color: red;");
         }
 
-        // Save customer if all fields are valid
+        // Save employee if all fields are valid
         if (isValidName && isValidContact) {
             EmployeeDTO employeeDTO = new EmployeeDTO(employeeId, name, contact);
 

@@ -214,7 +214,7 @@ public class FabricFormController  implements Initializable {
             widthtxt.setStyle(widthtxt.getStyle() + ";-fx-border-color: red;");
         }
 
-        // Save customer if all fields are valid
+        // Save fabric if all fields are valid
         if (isValidColor && isValidWeight_kg && isValidWidth_inch) {
             FabricDTO fabricDTO = new FabricDTO(fabric_id, color, weight_kg, width_inch);
 

@@ -183,7 +183,7 @@ public class PaymentFormController implements Initializable {
             amounttxt.setStyle(amounttxt.getStyle() + ";-fx-border-color: red;");
         }
 
-        // Save customer if all fields are valid
+        // Save payment if all fields are valid
         if (isValidAmount) {
             PaymentDTO paymentDTO = new PaymentDTO(payment_id, amount, date);
 

@@ -8,6 +8,5 @@ import lombok.*;
 @Getter
 @Setter
 
-public class StyleTM {
-
+public class SupplierOrderTM {
 }
