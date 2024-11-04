@@ -10,11 +10,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.CustomerTM;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.OrdersTM;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.PaymentTM;
+
+import java.time.LocalDate;
 
 public class OrdersFormController {
 
     @FXML
-    private TableColumn<?, ?> cusidclmn;
+    private TableColumn<CustomerTM, String> cusidclmn;
 
     @FXML
     private Label cusidlbl;
@@ -29,7 +34,7 @@ public class OrdersFormController {
     private Button customersearchbtn;
 
     @FXML
-    private TableColumn<?, ?> dateclmn;
+    private TableColumn<OrdersTM, LocalDate> dateclmn;
 
     @FXML
     private Label datel;
@@ -50,7 +55,7 @@ public class OrdersFormController {
     private Label lb;
 
     @FXML
-    private TableColumn<?, ?> orderidclmn;
+    private TableColumn<OrdersTM, String> orderidclmn;
 
     @FXML
     private Label orderidlbl;
@@ -59,10 +64,10 @@ public class OrdersFormController {
     private AnchorPane ordersap;
 
     @FXML
-    private TableView<?> orderstable;
+    private TableView<OrdersTM> orderstable;
 
     @FXML
-    private TableColumn<?, ?> paymentidclmn;
+    private TableColumn<PaymentTM, String> paymentidclmn;
 
     @FXML
     private Label paymentidlbl;
@@ -77,7 +82,7 @@ public class OrdersFormController {
     private Button paymentsearchbtn;
 
     @FXML
-    private TableColumn<?, ?> qtyclmn;
+    private TableColumn<OrdersTM, Integer> qtyclmn;
 
     @FXML
     private Label qtylbl;

@@ -10,9 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.stitchwave1stsemesterfinalproject.dto.CustomerDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.FabricDTO;
-import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.CustomerTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.FabricTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.model.FabricModel;
 
