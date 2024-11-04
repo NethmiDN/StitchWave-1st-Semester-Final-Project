@@ -114,4 +114,14 @@ public class StyleFormController {
 
     }
 
+    @FXML
+    void stocksearchbtnOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void empsearchbtnOnAction(ActionEvent event) {
+
+    }
+
 }

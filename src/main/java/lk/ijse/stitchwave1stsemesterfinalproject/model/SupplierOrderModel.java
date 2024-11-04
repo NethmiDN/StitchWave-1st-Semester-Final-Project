@@ -6,8 +6,12 @@ import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class SupplierOrderModel {
+
+    private Map<String, String> supplierMap;
+
     public String getNextSupplierOrderId() throws SQLException {
         ResultSet rst = CrudUtil.execute("select order_id from supplier_order order by order_id desc limit 1");
 

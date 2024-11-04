@@ -34,7 +34,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="amounttxt" prefHeight="26.0" prefWidth="422.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
+            <TextField fx:id="amounttxt" prefHeight="34.0" prefWidth="297.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -55,31 +55,31 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="resetbtn" layoutX="63.0" layoutY="149.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
+      <Button fx:id="resetbtn" layoutX="16.0" layoutY="166.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="dltbtn" layoutX="303.0" layoutY="149.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
+      <Button fx:id="dltbtn" layoutX="288.0" layoutY="166.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="updatebtn" layoutX="535.0" layoutY="149.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
+      <Button fx:id="updatebtn" layoutX="555.0" layoutY="166.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="savebtn" layoutX="773.0" layoutY="149.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
+      <Button fx:id="savebtn" layoutX="830.0" layoutY="166.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="paymenttable" layoutX="63.0" layoutY="198.0" onMouseClicked="#onClickTable" prefHeight="483.0" prefWidth="870.0">
+      <TableView fx:id="paymenttable" layoutX="16.0" layoutY="216.0" onMouseClicked="#onClickTable" prefHeight="466.0" prefWidth="974.0">
          <columns>
-            <TableColumn fx:id="idclmn" prefWidth="158.39997100830078" text="Payment Id" />
-            <TableColumn fx:id="amountclmn" prefWidth="480.8000183105469" text="Amount (Rs.)" />
-            <TableColumn fx:id="dateclmn" prefWidth="230.39996337890625" text="Date" />
+            <TableColumn fx:id="idclmn" prefWidth="261.6000175476074" text="Payment Id" />
+            <TableColumn fx:id="amountclmn" prefWidth="430.39996337890625" text="Amount (Rs.)" />
+            <TableColumn fx:id="dateclmn" prefWidth="282.39996337890625" text="Date" />
          </columns>
       </TableView>
       <ImageView fx:id="iconimg" fitHeight="111.0" fitWidth="124.0" layoutX="841.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
@@ -87,7 +87,7 @@
             <Image url="@../assets/img/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lb" layoutX="485.0" layoutY="14.0" text="Payment Form" textFill="#343131">
+      <Label fx:id="lb" layoutX="480.0" layoutY="14.0" text="Payment Form" textFill="#343131">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>

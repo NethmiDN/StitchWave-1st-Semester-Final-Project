@@ -18,9 +18,7 @@ import lk.ijse.stitchwave1stsemesterfinalproject.model.SupplierOrderModel;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SupplierOrderFormController implements Initializable {
 
@@ -91,6 +89,9 @@ public class SupplierOrderFormController implements Initializable {
     private Button updatebtn;
 
     SupplierOrderModel supplierOrderModel = new SupplierOrderModel();
+
+    private static final Map<String, String> supplierMap = new HashMap<>();
+
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idclmn.setCellValueFactory(new PropertyValueFactory<>("order_id"));
@@ -260,5 +261,4 @@ public class SupplierOrderFormController implements Initializable {
     void searchbtnOnAction(ActionEvent event) {
 
     }
-
 }

@@ -84,6 +84,9 @@
                <font>
                   <Font size="15.0" />
                </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
             </Label>
          </children>
       </HBox>
@@ -120,7 +123,7 @@
             <Image url="@../assets/img/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lb" alignment="CENTER" contentDisplay="CENTER" layoutX="424.0" layoutY="14.0" text="Supplier Order Form" textFill="#343131">
+      <Label fx:id="lb" alignment="CENTER" contentDisplay="CENTER" layoutX="455.0" layoutY="14.0" text="Supplier Order Form" textFill="#343131">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>

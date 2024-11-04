@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.stitchwave1stsemesterfinalproject.model.OrdersModel;
 
 public class OrdersFormController {
 
@@ -25,6 +24,9 @@ public class OrdersFormController {
 
     @FXML
     private Label cusnamelbl;
+
+    @FXML
+    private Button customersearchbtn;
 
     @FXML
     private TableColumn<?, ?> dateclmn;
@@ -69,6 +71,12 @@ public class OrdersFormController {
     private TextField paymentidtxt;
 
     @FXML
+    private Label paymentlbl;
+
+    @FXML
+    private Button paymentsearchbtn;
+
+    @FXML
     private TableColumn<?, ?> qtyclmn;
 
     @FXML
@@ -86,7 +94,10 @@ public class OrdersFormController {
     @FXML
     private Button updatebtn;
 
-    OrdersModel ordersModel = new OrdersModel();
+    @FXML
+    void customersearchbtnOnAction(ActionEvent event) {
+
+    }
 
     @FXML
     void dltbtnOnAction(ActionEvent event) {
@@ -95,6 +106,11 @@ public class OrdersFormController {
 
     @FXML
     void onClickTable(MouseEvent event) {
+
+    }
+
+    @FXML
+    void paymentsearchbtnOnAction(ActionEvent event) {
 
     }
 

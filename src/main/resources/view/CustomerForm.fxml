@@ -27,7 +27,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox layoutX="14.0" layoutY="71.0" prefHeight="34.0" prefWidth="530.0">
+      <HBox layoutX="14.0" layoutY="82.0" prefHeight="34.0" prefWidth="530.0">
          <children>
             <Label fx:id="namelbl" prefHeight="41.0" prefWidth="99.0" text="Name">
                <font>
@@ -41,7 +41,7 @@
             </TextField>
          </children>
       </HBox>
-      <HBox layoutX="14.0" layoutY="106.0" prefHeight="34.0" prefWidth="440.0">
+      <HBox layoutX="14.0" layoutY="125.0" prefHeight="34.0" prefWidth="440.0">
          <children>
             <Label fx:id="contactlbl" prefHeight="41.0" prefWidth="99.0" text="Contact">
                <font>
@@ -55,31 +55,31 @@
             </TextField>
          </children>
       </HBox>
-      <Button fx:id="resetbtn" layoutX="63.0" layoutY="149.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
+      <Button fx:id="resetbtn" layoutX="17.0" layoutY="173.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="dltbtn" layoutX="301.0" layoutY="149.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
+      <Button fx:id="dltbtn" layoutX="294.0" layoutY="173.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="updatebtn" layoutX="536.0" layoutY="149.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
+      <Button fx:id="updatebtn" layoutX="566.0" layoutY="173.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="savebtn" layoutX="773.0" layoutY="149.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
+      <Button fx:id="savebtn" layoutX="835.0" layoutY="173.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="custable" layoutX="63.0" layoutY="198.0" onMouseClicked="#onClickTable" prefHeight="483.0" prefWidth="870.0">
+      <TableView fx:id="custable" layoutX="17.0" layoutY="223.0" onMouseClicked="#onClickTable" prefHeight="458.0" prefWidth="978.0">
          <columns>
-            <TableColumn fx:id="idclmn" prefWidth="158.39997100830078" text="Customer Id" />
-            <TableColumn fx:id="nameclmn" prefWidth="480.8000183105469" text="Name" />
-            <TableColumn fx:id="contactclmn" prefWidth="230.39996337890625" text="Contact" />
+            <TableColumn fx:id="idclmn" prefWidth="193.59997177124023" text="Customer Id" />
+            <TableColumn fx:id="nameclmn" prefWidth="446.40000915527344" text="Name" />
+            <TableColumn fx:id="contactclmn" prefWidth="337.6000122070312" text="Contact" />
          </columns>
       </TableView>
       <ImageView fx:id="iconimg" fitHeight="111.0" fitWidth="124.0" layoutX="841.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
@@ -87,7 +87,7 @@
             <Image url="@../assets/img/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lb" layoutX="440.0" layoutY="5.0" text="Customer Form" textFill="#343131">
+      <Label fx:id="lb" layoutX="427.0" layoutY="6.0" text="Customer Form" textFill="#343131">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>
