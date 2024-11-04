@@ -2,6 +2,8 @@ package lk.ijse.stitchwave1stsemesterfinalproject.dto;
 
 import lombok.*;
 
+import java.time.LocalDate;
+
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
@@ -9,4 +11,8 @@ import lombok.*;
 @Setter
 
 public class SupplierOrderDTO {
+    private String order_id;
+    private Integer qty_kg;
+    private LocalDate date;
+    private String supplier_id;
 }

@@ -41,18 +41,23 @@
             </TextField>
          </children>
       </HBox>
-      <HBox layoutX="14.0" layoutY="100.0" prefHeight="34.0" prefWidth="440.0">
+      <HBox layoutX="14.0" layoutY="100.0" prefHeight="34.0" prefWidth="726.0">
          <children>
             <Label fx:id="supidlbl" prefHeight="41.0" prefWidth="99.0" text="Supplier Id">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="supidtxt" prefHeight="34.0" prefWidth="254.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
+            <TextField fx:id="supidtxt" prefHeight="34.0" prefWidth="169.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
+            <Label fx:id="supnamelbl" prefHeight="34.0" prefWidth="344.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
       <Button fx:id="resetbtn" layoutX="63.0" layoutY="149.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
@@ -78,7 +83,7 @@
       <TableView fx:id="supplierordertable" layoutX="63.0" layoutY="198.0" onMouseClicked="#onClickTable" prefHeight="483.0" prefWidth="870.0">
          <columns>
             <TableColumn fx:id="idclmn" prefWidth="172.8000144958496" text="Order Id" />
-            <TableColumn fx:id="qtyclmn" prefWidth="228.00001525878906" text="Quantity" />
+            <TableColumn fx:id="qtyclmn" prefWidth="228.00001525878906" text="Quantity (kg)" />
             <TableColumn fx:id="dateclmn" prefWidth="257.60003662109375" text="Date" />
             <TableColumn fx:id="supidclmn" prefWidth="211.199951171875" text="Supplier id" />
          </columns>

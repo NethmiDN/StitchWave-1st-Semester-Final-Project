@@ -38,7 +38,7 @@ public class StyleFormController {
     private Label lb;
 
     @FXML
-    private TableColumn<StyleTM, Long> qtyclmn;
+    private TableColumn<StyleTM, Integer> qtyclmn;
 
     @FXML
     private Label qtylbl;
