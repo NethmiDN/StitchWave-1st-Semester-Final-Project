@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -33,72 +34,98 @@
                <font>
                   <Font size="15.0" />
                </font>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
             </Label>
             <TextField fx:id="qtytxt" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
                <font>
                   <Font size="15.0" />
                </font>
+               <HBox.margin>
+                  <Insets left="-9.0" />
+               </HBox.margin>
             </TextField>
          </children>
       </HBox>
       <HBox layoutX="14.0" layoutY="100.0" prefHeight="34.0" prefWidth="726.0">
          <children>
-            <Label fx:id="supidlbl" prefHeight="41.0" prefWidth="99.0" text="Supplier Id">
+            <Label fx:id="supidlbl" prefHeight="41.0" prefWidth="100.0" text="Supplier Id">
                <font>
                   <Font size="15.0" />
                </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
             </Label>
-            <TextField fx:id="supidtxt" prefHeight="34.0" prefWidth="169.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
+            <TextField fx:id="supidtxt" prefHeight="46.0" prefWidth="163.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
                <font>
                   <Font size="15.0" />
                </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
             </TextField>
-            <Label fx:id="supnamelbl" prefHeight="34.0" prefWidth="344.0">
+            <Button fx:id="searchbtn" mnemonicParsing="false" onAction="#searchbtnOnAction" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #FFFF80; -fx-background-radius: 8; -fx-border-radius: 8;" text="Search">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="70.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Label fx:id="supnamelbl" prefHeight="42.0" prefWidth="322.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <Button fx:id="resetbtn" layoutX="63.0" layoutY="149.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
+      <Button fx:id="resetbtn" layoutX="14.0" layoutY="166.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="dltbtn" layoutX="300.0" layoutY="149.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
+      <Button fx:id="dltbtn" layoutX="305.0" layoutY="166.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="updatebtn" layoutX="535.0" layoutY="149.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
+      <Button fx:id="updatebtn" layoutX="566.0" layoutY="166.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="savebtn" layoutX="773.0" layoutY="149.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
+      <Button fx:id="savebtn" layoutX="829.0" layoutY="166.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="supplierordertable" layoutX="63.0" layoutY="198.0" onMouseClicked="#onClickTable" prefHeight="483.0" prefWidth="870.0">
+      <TableView fx:id="supplierordertable" layoutX="15.0" layoutY="224.0" onMouseClicked="#onClickTable" prefHeight="457.0" prefWidth="979.0">
          <columns>
-            <TableColumn fx:id="idclmn" prefWidth="172.8000144958496" text="Order Id" />
-            <TableColumn fx:id="qtyclmn" prefWidth="228.00001525878906" text="Quantity (kg)" />
-            <TableColumn fx:id="dateclmn" prefWidth="257.60003662109375" text="Date" />
-            <TableColumn fx:id="supidclmn" prefWidth="211.199951171875" text="Supplier id" />
+            <TableColumn fx:id="idclmn" prefWidth="180.80001258850098" text="Order Id" />
+            <TableColumn fx:id="qtyclmn" prefWidth="239.20001220703125" text="Quantity (kg)" />
+            <TableColumn fx:id="dateclmn" prefWidth="272.0" text="Date" />
+            <TableColumn fx:id="supidclmn" prefWidth="286.39996337890625" text="Supplier id" />
          </columns>
       </TableView>
-      <ImageView fx:id="iconimg" fitHeight="111.0" fitWidth="124.0" layoutX="841.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="iconimg" fitHeight="111.0" fitWidth="124.0" layoutX="854.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/img/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lb" layoutX="460.0" layoutY="14.0" text="Supplier Order Form" textFill="#343131">
+      <Label fx:id="lb" alignment="CENTER" contentDisplay="CENTER" layoutX="424.0" layoutY="14.0" text="Supplier Order Form" textFill="#343131">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>
       </Label>
-      <HBox layoutX="350.0" layoutY="72.0" prefHeight="34.0" prefWidth="370.0">
+      <HBox layoutX="381.0" layoutY="55.0" prefHeight="34.0" prefWidth="370.0">
          <children>
             <Label fx:id="datelbl" prefHeight="41.0" prefWidth="99.0" text="Date">
                <font>

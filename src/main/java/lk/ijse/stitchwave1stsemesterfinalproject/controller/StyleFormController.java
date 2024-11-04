@@ -38,6 +38,15 @@ public class StyleFormController {
     private Label lb;
 
     @FXML
+    private Label stocklbl;
+
+    @FXML
+    private Button stocksearchbtn;
+
+    @FXML
+    private Button empsearchbtn;
+
+    @FXML
     private TableColumn<StyleTM, Integer> qtyclmn;
 
     @FXML

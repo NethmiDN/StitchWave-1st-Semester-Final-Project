@@ -49,6 +49,9 @@ public class SupplierOrderFormController implements Initializable {
     private Label lblid;
 
     @FXML
+    private Button searchbtn;
+
+    @FXML
     private Label orderidlbl;
 
     @FXML
@@ -251,6 +254,11 @@ public class SupplierOrderFormController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Fail to update supplier order...!").show();
             }
         }
+    }
+
+    @FXML
+    void searchbtnOnAction(ActionEvent event) {
+
     }
 
 }
