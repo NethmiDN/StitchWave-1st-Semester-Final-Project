@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stitchwave1stsemesterfinalproject.controller.DashboardFormController">
+<AnchorPane fx:id="rootPane" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../style/dashboard_styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stitchwave1stsemesterfinalproject.controller.DashboardFormController">
    <children>
       <ImageView fitHeight="768.0" fitWidth="1366.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -27,7 +27,7 @@
       </AnchorPane>
       <VBox layoutX="51.0" layoutY="35.0" prefHeight="700.0" prefWidth="250.0" style="-fx-background-radius: 30;">
          <children>
-            <VBox prefHeight="700.0" prefWidth="250.0" style="-fx-background-radius: 17; -fx-background-color: #BCF2F6;">
+            <VBox prefHeight="700.0" prefWidth="250.0" style="-fx-background-radius: 17; -fx-background-color: b;;">
                <children>
                   <AnchorPane prefHeight="75.0" prefWidth="248.0">
                      <children>

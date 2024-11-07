@@ -10,10 +10,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.SupplierDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.SupplierOrderDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.SupplierOrderTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.SupplierTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.model.SupplierOrderModel;
+import lk.ijse.stitchwave1stsemesterfinalproject.model.SupplierModel;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -27,6 +29,9 @@ public class SupplierOrderFormController implements Initializable {
 
     @FXML
     private Label datelbl;
+
+    @FXML
+    private Label supplierName;
 
     @FXML
     private Button dltbtn;
@@ -45,9 +50,6 @@ public class SupplierOrderFormController implements Initializable {
 
     @FXML
     private Label lblid;
-
-    @FXML
-    private Button searchbtn;
 
     @FXML
     private Label orderidlbl;
@@ -88,10 +90,14 @@ public class SupplierOrderFormController implements Initializable {
     @FXML
     private Button updatebtn;
 
+    @FXML
+    private ComboBox<String> cmbsupid;
+
     SupplierOrderModel supplierOrderModel = new SupplierOrderModel();
 
-    private static final Map<String, String> supplierMap = new HashMap<>();
+    SupplierModel supplierModel = new SupplierModel();
 
+//    SupplierDTO supplierDTO = new SupplierDTO();
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idclmn.setCellValueFactory(new PropertyValueFactory<>("order_id"));
@@ -100,6 +106,7 @@ public class SupplierOrderFormController implements Initializable {
         supidclmn.setCellValueFactory(new PropertyValueFactory<>("supplier_id"));
 
         try {
+            loadSupplierIds();
             refreshPage();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -114,7 +121,6 @@ public class SupplierOrderFormController implements Initializable {
 
         qtytxt.setText("");
         suporderdate.setText(LocalDate.now().toString());
-        supidtxt.setText("");
 
         savebtn.setDisable(false);
         dltbtn.setDisable(true);
@@ -257,8 +263,21 @@ public class SupplierOrderFormController implements Initializable {
         }
     }
 
-    @FXML
-    void searchbtnOnAction(ActionEvent event) {
+    private void loadSupplierIds() throws SQLException {
+        ArrayList<String> supplierIds = supplierModel.getAllSupplierIds();
+        ObservableList<String> observableList = FXCollections.observableArrayList();
+        observableList.addAll(supplierIds);
+        cmbsupid.setItems(observableList);
+    }
 
+    @FXML
+    void cmbsupidOnAction(ActionEvent event) throws SQLException {
+        String selectedSupId = cmbsupid.getSelectionModel().getSelectedItem();
+        if (selectedSupId != null) {
+            SupplierDTO supplierDTO = supplierModel.findById(selectedSupId);
+            if (supplierDTO != null) {
+                supplierName.setText(supplierDTO.getName());
+            }
+        }
     }
 }
