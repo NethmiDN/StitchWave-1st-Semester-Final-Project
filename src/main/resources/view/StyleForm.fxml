@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -68,19 +69,15 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="employeeidtxt" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: ransparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
+            <ComboBox fx:id="cmbempid" onAction="#cmbempidOnAction" prefHeight="37.0" prefWidth="162.0" promptText="Select Employee Id" />
+            <Label prefHeight="41.0" prefWidth="99.0" text="Name">
                <font>
                   <Font size="15.0" />
                </font>
-            </TextField>
-            <Button fx:id="empsearchbtn" mnemonicParsing="false" onAction="#empsearchbtnOnAction" prefHeight="34.0" prefWidth="76.0" style="-fx-background-color: #FFFF80;" text="Search">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="16.0" />
-               </font>
                <HBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="20.0" />
                </HBox.margin>
-            </Button>
+            </Label>
             <Label fx:id="employeenamelbl" prefHeight="47.0" prefWidth="346.0">
                <font>
                   <Font size="15.0" />
@@ -88,31 +85,14 @@
             </Label>
          </children>
       </HBox>
-      <HBox layoutX="14.0" layoutY="169.0" prefHeight="42.0" prefWidth="786.0">
+      <HBox layoutX="14.0" layoutY="169.0" prefHeight="42.0" prefWidth="665.0">
          <children>
-            <Label fx:id="stockidlbl" prefHeight="42.0" prefWidth="98.0" text="Stock Id">
+            <Label fx:id="stockidlbl" prefHeight="42.0" prefWidth="90.0" text="Stock Id">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="stockidtxt" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </TextField>
-            <Button fx:id="stocksearchbtn" mnemonicParsing="false" onAction="#stocksearchbtnOnAction" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #FFFF80;" text="Search">
-               <HBox.margin>
-                  <Insets left="30.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Comic Sans MS Bold" size="16.0" />
-               </font>
-            </Button>
-            <Label fx:id="stocklbl" prefHeight="47.0" prefWidth="346.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
+            <ComboBox fx:id="cmbstockid" onAction="#cmbstockidOnAction" prefHeight="38.0" prefWidth="156.0" promptText="Select Stock Id" />
          </children>
       </HBox>
       <Button fx:id="resetbtn" layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
@@ -135,9 +115,9 @@
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="styletable" layoutX="14.0" layoutY="273.0" prefHeight="411.0" prefWidth="979.0">
+      <TableView fx:id="styletable" layoutX="14.0" layoutY="273.0" onMouseClicked="#onClickTable" prefHeight="411.0" prefWidth="979.0">
         <columns>
-          <TableColumn fx:id="styleclmn" prefWidth="171.99999618530273" text="Style Id" />
+          <TableColumn fx:id="styleidclmn" prefWidth="171.99999618530273" text="Style Id" />
           <TableColumn fx:id="sizeclmn" prefWidth="197.59996032714844" text="Size" />
             <TableColumn fx:id="qtyclmn" prefWidth="221.59991455078125" text="Quantity" />
             <TableColumn fx:id="empidclmn" prefWidth="193.60003662109375" text="Employee Id" />

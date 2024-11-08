@@ -2,17 +2,14 @@ package lk.ijse.stitchwave1stsemesterfinalproject.dto.tm;
 
 import lombok.*;
 
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 
-public class StyleTM {
-    private String style_id;
-    private String size;
-    private Integer qty;
-    private String employee_id;
+public class SewnClothesStockTM {
     private String stock_id;
-
+    private Integer qty;
+    private String fabric_id;
 }

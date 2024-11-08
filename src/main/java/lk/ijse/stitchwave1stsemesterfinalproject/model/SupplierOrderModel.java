@@ -6,11 +6,8 @@ import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Map;
 
 public class SupplierOrderModel {
-
-    private Map<String, String> supplierMap;
 
     public String getNextSupplierOrderId() throws SQLException {
         ResultSet rst = CrudUtil.execute("select order_id from supplier_order order by order_id desc limit 1");
@@ -54,7 +51,7 @@ public class SupplierOrderModel {
 
     public boolean updateSupplierOrder(SupplierOrderDTO supplierOrderDTO) throws SQLException {
         return CrudUtil.execute(
-                "update supplier_order set qty=?, date=?, supplier_id=? where order_id=?",
+                "update supplier_order set qty_kg=?, date=?, supplier_id=? where order_id=?",
                 supplierOrderDTO.getQty_kg(),
                 supplierOrderDTO.getDate(),
                 supplierOrderDTO.getSupplier_id(),

@@ -29,9 +29,9 @@
          <children>
             <VBox prefHeight="700.0" prefWidth="250.0" style="-fx-background-radius: 17; -fx-background-color: b;;">
                <children>
-                  <AnchorPane prefHeight="75.0" prefWidth="248.0">
+                  <AnchorPane prefHeight="52.0" prefWidth="250.0">
                      <children>
-                        <Label alignment="CENTER" layoutX="-4.0" prefHeight="83.0" prefWidth="254.0" text="STITCHWAVE">
+                        <Label alignment="CENTER" layoutX="-4.0" prefHeight="60.0" prefWidth="254.0" text="STITCHWAVE">
                            <font>
                               <Font name="Comic Sans MS Bold" size="24.0" />
                            </font>

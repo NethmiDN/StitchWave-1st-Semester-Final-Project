@@ -37,9 +37,6 @@ public class SupplierOrderFormController implements Initializable {
     private Button dltbtn;
 
     @FXML
-    private Label supnamelbl;
-
-    @FXML
     private ImageView iconimg;
 
     @FXML
@@ -96,8 +93,6 @@ public class SupplierOrderFormController implements Initializable {
     SupplierOrderModel supplierOrderModel = new SupplierOrderModel();
 
     SupplierModel supplierModel = new SupplierModel();
-
-//    SupplierDTO supplierDTO = new SupplierDTO();
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idclmn.setCellValueFactory(new PropertyValueFactory<>("order_id"));
@@ -169,7 +164,7 @@ public class SupplierOrderFormController implements Initializable {
             lblid.setText(selectedItem.getOrder_id());
             qtytxt.setText(String.valueOf(selectedItem.getQty_kg()));
             suporderdate.setText(String.valueOf(selectedItem.getDate()));
-            supidtxt.setText(selectedItem.getSupplier_id());
+            cmbsupid.setValue(selectedItem.getSupplier_id());
 
             savebtn.setDisable(true);
 
@@ -181,7 +176,6 @@ public class SupplierOrderFormController implements Initializable {
     @FXML
     void resetbtnOnAction(ActionEvent event) throws SQLException {
         refreshPage();
-
     }
 
     @FXML
@@ -189,7 +183,7 @@ public class SupplierOrderFormController implements Initializable {
         String order_id = lblid.getText();
         Integer qty = Integer.valueOf(qtytxt.getText());
         LocalDate date = LocalDate.parse(suporderdate.getText());
-        String supplier_id = supidtxt.getText();
+        String supplier_id = cmbsupid.getValue();
 
         // Define regex patterns for validation
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
@@ -204,7 +198,6 @@ public class SupplierOrderFormController implements Initializable {
 
         // Reset input field styles
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
-        supidtxt.setStyle(supidtxt.getStyle() + ";-fx-border-color:  #091057;");
 
         // Highlight invalid fields in red
 
@@ -232,7 +225,8 @@ public class SupplierOrderFormController implements Initializable {
         String order_id = lblid.getText();
         Integer qty = Integer.valueOf(qtytxt.getText());
         LocalDate date = LocalDate.parse(suporderdate.getText());
-        String supplier_id = supidtxt.getText();
+//        String supplier_id = supidtxt.getText();
+        String supplier_id = cmbsupid.getValue();
 
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
@@ -242,7 +236,6 @@ public class SupplierOrderFormController implements Initializable {
 
 
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
-        supidtxt.setStyle(supidtxt.getStyle() + ";-fx-border-color:  #091057;");
 
         if (!isValidQty) {
             qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color: red;");
@@ -280,4 +273,6 @@ public class SupplierOrderFormController implements Initializable {
             }
         }
     }
+
+
 }

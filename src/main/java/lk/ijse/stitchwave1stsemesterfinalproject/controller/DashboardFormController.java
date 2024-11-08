@@ -26,40 +26,9 @@ public class DashboardFormController implements Initializable {
     private AnchorPane ap;
 
     @FXML
-    private Button clothesorderdetailbtn;
-
-    @FXML
-    private Button customerbtn;
-
-    @FXML
-    private Button empbtn;
-
-    @FXML
-    private Button fabricbtn;
-
-    @FXML
-    private Button fabricorderdetailbtn;
-
-    @FXML
-    private Button orderbtn;
-
-    @FXML
-    private Button paymentbtn;
-
-    @FXML
-    private AnchorPane rootPane;
-
-    @FXML
-    private Button sewnclothesstockbtn;
-
-    @FXML
-    private Button stylebtn;
-
-    @FXML
-    private Button supplierbtn;
-
-    @FXML
-    private Button supplierorderbtn;
+    private Button clothesorderdetailbtn, customerbtn, empbtn, fabricbtn,
+            fabricorderdetailbtn, orderbtn, paymentbtn, sewnclothesstockbtn,
+            stylebtn, supplierbtn, supplierorderbtn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -75,83 +44,154 @@ public class DashboardFormController implements Initializable {
         initializeButtonEffect(supplierbtn);
         initializeButtonEffect(supplierorderbtn);
         initializeButtonEffect(fabricorderdetailbtn);
+
+        onButtonClicked(empbtn);
+        setButtonSizes();
     }
 
     @FXML
     private void initializeButtonEffect(Button button) {
         DropShadow shadow = new DropShadow();
-        shadow.setColor(Color.rgb(255, 105, 180, 0.6));
+        shadow.setColor(Color.rgb(100, 100, 100, 0.4));
+
         button.setOnMouseEntered(e -> button.setEffect(shadow));
         button.setOnMouseExited(e -> button.setEffect(null));
 
         button.setOnMousePressed(e -> {
-            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(200), button);
+            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(150), button);
             scaleTransition.setToX(0.95);
             scaleTransition.setToY(0.95);
             scaleTransition.play();
         });
 
         button.setOnMouseReleased(e -> {
-            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(200), button);
+            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(150), button);
             scaleTransition.setToX(1.0);
             scaleTransition.setToY(1.0);
             scaleTransition.play();
         });
     }
 
+    private void setButtonSizes() {
+        double buttonWidth = 240;
+        double buttonHeight = 20;
+
+        empbtn.setPrefSize(buttonWidth, buttonHeight);
+        customerbtn.setPrefSize(buttonWidth, buttonHeight);
+        orderbtn.setPrefSize(buttonWidth, buttonHeight);
+        paymentbtn.setPrefSize(buttonWidth, buttonHeight);
+        clothesorderdetailbtn.setPrefSize(buttonWidth, buttonHeight);
+        fabricbtn.setPrefSize(buttonWidth, buttonHeight);
+        stylebtn.setPrefSize(buttonWidth, buttonHeight);
+        sewnclothesstockbtn.setPrefSize(buttonWidth, buttonHeight);
+        supplierbtn.setPrefSize(buttonWidth, buttonHeight);
+        supplierorderbtn.setPrefSize(buttonWidth, buttonHeight);
+        fabricorderdetailbtn.setPrefSize(buttonWidth, buttonHeight);
+    }
+
+    private void setActiveButtonStyle(Button activeButton) {
+        activeButton.setStyle(
+                "-fx-background-color: linear-gradient(to right, #1FA2FF, #1885D2);" +
+                        "-fx-text-fill: #FFFFFF;" +
+                        "-fx-border-color: #1885D2;" +
+                        "-fx-border-width: 1;" +
+                        "-fx-background-radius: 6;" +
+                        "-fx-border-radius: 6;" +
+                        "-fx-effect: dropshadow(gaussian, rgba(24, 133, 210, 0.4), 12, 0, 0, 3);"
+        );
+    }
+
+    private void resetButtonStyles() {
+        String resetStyle =
+                "-fx-background-color: transparent;" +
+                        "-fx-border-color: linear-gradient(to right, #1FA2FF, #1885D2);" +
+                        "-fx-border-width: 1;" +
+                        "-fx-background-radius: 6;" +
+                        "-fx-border-radius: 6;" +
+                        "-fx-text-fill: #1885D2;";
+
+        empbtn.setStyle(resetStyle);
+        customerbtn.setStyle(resetStyle);
+        orderbtn.setStyle(resetStyle);
+        paymentbtn.setStyle(resetStyle);
+        clothesorderdetailbtn.setStyle(resetStyle);
+        fabricbtn.setStyle(resetStyle);
+        stylebtn.setStyle(resetStyle);
+        sewnclothesstockbtn.setStyle(resetStyle);
+        supplierbtn.setStyle(resetStyle);
+        supplierorderbtn.setStyle(resetStyle);
+        fabricorderdetailbtn.setStyle(resetStyle);
+    }
+
+    private void onButtonClicked(Button selectedButton) {
+        resetButtonStyles();
+        setActiveButtonStyle(selectedButton);
+    }
+
     @FXML
-    void clothesorderdetailbtnOnAction(ActionEvent event) {
+    private void clothesorderdetailbtnOnAction(ActionEvent event) {
         navigateTo("/view/ClothesOrderDetailsForm.fxml");
+        onButtonClicked(clothesorderdetailbtn);
     }
 
     @FXML
-    void customerbtnOnAction(ActionEvent event) {
+    private void customerbtnOnAction(ActionEvent event) {
         navigateTo("/view/CustomerForm.fxml");
+        onButtonClicked(customerbtn);
     }
 
     @FXML
-    void empbtnOnAction(ActionEvent event) {
+    private void empbtnOnAction(ActionEvent event) {
         navigateTo("/view/EmployeeForm.fxml");
+        onButtonClicked(empbtn);
     }
 
     @FXML
-    void fabricbtnOnAction(ActionEvent event) {
+    private void fabricbtnOnAction(ActionEvent event) {
         navigateTo("/view/FabricForm.fxml");
+        onButtonClicked(fabricbtn);
     }
 
     @FXML
-    void fabricorderdetailbtnOnAction(ActionEvent event) {
+    private void fabricorderdetailbtnOnAction(ActionEvent event) {
         navigateTo("/view/FabricOrderDetailsForm.fxml");
+        onButtonClicked(fabricorderdetailbtn);
     }
 
     @FXML
-    void orderbtnOnAction(ActionEvent event) {
+    private void orderbtnOnAction(ActionEvent event) {
         navigateTo("/view/OrdersForm.fxml");
+        onButtonClicked(orderbtn);
     }
 
     @FXML
-    void paymentbtnOnAction(ActionEvent event) {
+    private void paymentbtnOnAction(ActionEvent event) {
         navigateTo("/view/PaymentForm.fxml");
+        onButtonClicked(paymentbtn);
     }
 
     @FXML
-    void sewnclothesstockbtnOnAction(ActionEvent event) {
+    private void sewnclothesstockbtnOnAction(ActionEvent event) {
         navigateTo("/view/SewnClothesStockForm.fxml");
+        onButtonClicked(sewnclothesstockbtn);
     }
 
     @FXML
-    void stylebtnOnAction(ActionEvent event) {
+    private void stylebtnOnAction(ActionEvent event) {
         navigateTo("/view/StyleForm.fxml");
+        onButtonClicked(stylebtn);
     }
 
     @FXML
-    void supplierbtnOnAction(ActionEvent event) {
+    private void supplierbtnOnAction(ActionEvent event) {
         navigateTo("/view/SupplierForm.fxml");
+        onButtonClicked(supplierbtn);
     }
 
     @FXML
-    void supplierorderbtnOnAction(ActionEvent event) {
+    private void supplierorderbtnOnAction(ActionEvent event) {
         navigateTo("/view/SupplierOrderForm.fxml");
+        onButtonClicked(supplierorderbtn);
     }
 
     private void navigateTo(String fxmlPath) {
@@ -161,7 +201,6 @@ public class DashboardFormController implements Initializable {
 
             load.prefWidthProperty().bind(ap.widthProperty());
             load.prefHeightProperty().bind(ap.heightProperty());
-
             ap.getChildren().add(load);
 
             applyEnhancedTransition(load);
@@ -173,19 +212,19 @@ public class DashboardFormController implements Initializable {
     }
 
     private void applyEnhancedTransition(Node node) {
-        FadeTransition fadeIn = new FadeTransition(Duration.millis(500), node);
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(400), node);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0);
 
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(500), node);
-        scaleTransition.setFromX(0.9);
-        scaleTransition.setFromY(0.9);
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(400), node);
+        scaleTransition.setFromX(0.85);
+        scaleTransition.setFromY(0.85);
         scaleTransition.setToX(1.0);
         scaleTransition.setToY(1.0);
 
-        TranslateTransition slideTransition = new TranslateTransition(Duration.millis(500), node);
-        slideTransition.setFromX(50);
-        slideTransition.setToX(0);
+        TranslateTransition slideTransition = new TranslateTransition(Duration.millis(400), node);
+        slideTransition.setFromY(20);
+        slideTransition.setToY(0);
 
         ParallelTransition parallelTransition = new ParallelTransition(fadeIn, scaleTransition, slideTransition);
         parallelTransition.play();

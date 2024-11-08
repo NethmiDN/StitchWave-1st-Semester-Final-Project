@@ -65,15 +65,24 @@
                   <Insets top="5.0" />
                </HBox.margin>
             </Label>
-            <ComboBox fx:id="cmbsupid" onAction="#cmbsupidOnAction" prefHeight="37.0" prefWidth="162.0" promptText="select supplier id" />
-            <Label fx:id="supnamelbl" prefHeight="42.0" prefWidth="322.0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </Label>
+            <ComboBox fx:id="cmbsupid" onAction="#cmbsupidOnAction" prefHeight="37.0" prefWidth="162.0" promptText="Select Supplier Id" />
+            <HBox prefHeight="34.0" prefWidth="370.0">
+               <children>
+                  <Label prefHeight="41.0" prefWidth="99.0" text="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="supplierName" prefHeight="28.0" prefWidth="218.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </HBox>
       <Button fx:id="resetbtn" layoutX="14.0" layoutY="166.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
@@ -122,20 +131,6 @@
                </font>
             </Label>
             <Label fx:id="suporderdate" prefHeight="28.0" prefWidth="218.0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <HBox layoutX="381.0" layoutY="95.0" prefHeight="34.0" prefWidth="370.0">
-         <children>
-            <Label prefHeight="41.0" prefWidth="99.0" text="Name">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="supplierName" prefHeight="28.0" prefWidth="218.0">
                <font>
                   <Font size="15.0" />
                </font>
