@@ -1,6 +1,5 @@
 package lk.ijse.stitchwave1stsemesterfinalproject.controller;
 
-import com.jfoenix.controls.JFXBadge;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,7 +18,6 @@ import lk.ijse.stitchwave1stsemesterfinalproject.model.StyleModel;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -84,9 +82,6 @@ public class StyleFormController implements Initializable {
     private Label stockidlbl;
 
     @FXML
-    private Label stocklbl;
-
-    @FXML
     private AnchorPane styleap;
 
     @FXML
@@ -100,12 +95,6 @@ public class StyleFormController implements Initializable {
 
     @FXML
     private Button updatebtn;
-
-    @FXML
-    private TextField empidtxt;
-
-    @FXML
-    private TextField stockidtxt;
 
     StyleModel styleModel = new StyleModel();
 

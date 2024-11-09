@@ -198,8 +198,8 @@ public class OrdersFormController implements Initializable {
         String order_id = idlbl.getText();
         Integer qty = Integer.valueOf(qtytxt.getText());
         LocalDate date = LocalDate.parse(datelbl.getText());
-        String customer_id = String.valueOf(cmbcusid.getValue());
-        String payment_id = String.valueOf(cmbpayid.getValue());
+        String customer_id = cmbcusid.getValue();
+        String payment_id = cmbpayid.getValue();
 
         // Define regex patterns for validation
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
@@ -241,8 +241,8 @@ public class OrdersFormController implements Initializable {
         String order_id = idlbl.getText();
         LocalDate date = LocalDate.parse(datelbl.getText());
         Integer qty = Integer.valueOf(qtytxt.getText());
-        String customer_id = String.valueOf(cmbcusid.getValue());
-        String payment_id = String.valueOf(cmbpayid.getValue());
+        String customer_id = cmbcusid.getValue();
+        String payment_id = cmbpayid.getValue();
 
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
