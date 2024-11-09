@@ -117,7 +117,6 @@ public class PaymentFormController implements Initializable {
         paymenttable.setItems(paymentTMS);
     }
 
-
     @FXML
     void dltbtnOnAction(ActionEvent event) throws SQLException {
         String payment_id = lblid.getText();
@@ -166,11 +165,6 @@ public class PaymentFormController implements Initializable {
         // Define regex patterns for validation
         Double amountPattern = Double.valueOf("^\\d{1,7}(\\.\\d{1,2})?$");
 
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidAmount = String.valueOf(amount).matches(String.valueOf(amountPattern));
 
@@ -206,8 +200,6 @@ public class PaymentFormController implements Initializable {
 
         Double amountPattern = Double.valueOf("^(\\d{1,7}(\\.\\d{1,2})?)$");
 
-//        Pattern compile = Pattern.compile(namePattern);
-//        System.out.println(compile.matcher(name).matches());
         boolean isValidAmount = String.valueOf(amount).matches(String.valueOf(amountPattern));
 
         amounttxt.setStyle(amounttxt.getStyle() + ";-fx-border-color:  #091057;");

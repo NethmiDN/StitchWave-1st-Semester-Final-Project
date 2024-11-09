@@ -201,11 +201,6 @@ public class StyleFormController implements Initializable {
         String sizePattern = "(?i)^(xs|s|m|l|xl|xxl|xxxl)$";
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidSize = size.matches(sizePattern);
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
@@ -213,8 +208,6 @@ public class StyleFormController implements Initializable {
         // Reset input field styles
         sizetxt.setStyle(sizetxt.getStyle() + ";-fx-border-color:  #091057;");
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
-        //empidtxt.setStyle(empidtxt.getStyle() + ";-fx-border-color:  #091057;");
-        //stockidtxt.setStyle(stockidtxt.getStyle() + ";-fx-border-color:  #091057;");
 
         // Highlight invalid fields in red
 
@@ -226,7 +219,7 @@ public class StyleFormController implements Initializable {
             qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color: red;");
         }
 
-        // Save customer if all fields are valid
+        // Save style if all fields are valid
         if (isValidSize && isValidQty) {
             StyleDTO styleDTO = new StyleDTO(style_id, size, qty, employee_id, stock_id);
 
@@ -252,16 +245,12 @@ public class StyleFormController implements Initializable {
         String sizePattern = "(?i)^(xs|s|m|l|xl|xxl|xxxl)$";
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        Pattern compile = Pattern.compile(namePattern);
-//        System.out.println(compile.matcher(name).matches());
         boolean isValidSize = size.matches(sizePattern);
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
 
         sizetxt.setStyle(sizetxt.getStyle() + ";-fx-border-color:  #091057;");
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
-        //empidtxt.setStyle(empidtxt.getStyle() + ";-fx-border-color:  #091057;");
-        //stockidtxt.setStyle(stockidtxt.getStyle() + ";-fx-border-color:  #091057;");
 
         if (!isValidSize) {
             sizetxt.setStyle(qtytxt.getStyle() + ";-fx-border-color: red;");

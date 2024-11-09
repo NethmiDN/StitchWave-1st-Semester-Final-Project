@@ -204,11 +204,6 @@ public class OrdersFormController implements Initializable {
         // Define regex patterns for validation
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
@@ -221,7 +216,7 @@ public class OrdersFormController implements Initializable {
             qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color: red;");
         }
 
-        // Save customer if all fields are valid
+        // Save order if all fields are valid
         if (isValidQty) {
             OrdersDTO ordersDTO = new OrdersDTO(order_id, date, qty, customer_id, payment_id);
 
@@ -246,8 +241,6 @@ public class OrdersFormController implements Initializable {
 
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        Pattern compile = Pattern.compile(namePattern);
-//        System.out.println(compile.matcher(name).matches());
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
 
@@ -289,7 +282,6 @@ public class OrdersFormController implements Initializable {
             }
         }
     }
-
 
     private void loadPaymentIds() throws SQLException {
         ArrayList<String> paymentIds = paymentModel.getAllPaymentIds();
