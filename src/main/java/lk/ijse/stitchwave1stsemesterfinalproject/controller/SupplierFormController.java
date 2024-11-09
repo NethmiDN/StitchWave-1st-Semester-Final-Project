@@ -117,7 +117,6 @@ public class SupplierFormController implements Initializable {
         suppliertable.setItems(supplierTMS);
     }
 
-
     @FXML
     void dltbtnOnAction(ActionEvent event) throws SQLException {
         String supplier_id = lblid.getText();

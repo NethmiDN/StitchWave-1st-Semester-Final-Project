@@ -117,7 +117,6 @@ public class PaymentFormController implements Initializable {
         paymenttable.setItems(paymentTMS);
     }
 
-
     @FXML
     void dltbtnOnAction(ActionEvent event) throws SQLException {
         String payment_id = lblid.getText();

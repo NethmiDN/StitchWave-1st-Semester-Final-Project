@@ -102,7 +102,7 @@
             </TextField>
          </children>
       </HBox>
-      <Label fx:id="lb" layoutX="443.0" layoutY="14.0" text="Fabric Form" textFill="#343131">
+      <Label fx:id="lb" layoutX="495.0" layoutY="18.0" text="Fabric Form" textFill="#343131">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>
