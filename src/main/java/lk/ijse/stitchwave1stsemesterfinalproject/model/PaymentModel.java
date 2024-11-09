@@ -1,6 +1,5 @@
 package lk.ijse.stitchwave1stsemesterfinalproject.model;
 
-import lk.ijse.stitchwave1stsemesterfinalproject.dto.CustomerDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.PaymentDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 
@@ -13,13 +12,13 @@ public class PaymentModel {
         ResultSet rst = CrudUtil.execute("select payment_id from payment order by payment_id desc limit 1");
 
         if (rst.next()) {
-            String lastId = rst.getString(1); // Last employee ID
+            String lastId = rst.getString(1); // Last payment ID
             String substring = lastId.substring(1); // Extract the numeric part
             int i = Integer.parseInt(substring); // Convert the numeric part to integer
             int newIdIndex = i + 1; // Increment the number by 1
-            return String.format("P%03d", newIdIndex); // Return the new employee ID in format Pnnn
+            return String.format("P%03d", newIdIndex); // Return the new payment ID in format Pnnn
         }
-        return "P001"; // Return the default employee ID if no data is found
+        return "P001"; // Return the default payment ID if no data is found
     }
 
     public boolean savePayment(PaymentDTO paymentDTO) throws SQLException {

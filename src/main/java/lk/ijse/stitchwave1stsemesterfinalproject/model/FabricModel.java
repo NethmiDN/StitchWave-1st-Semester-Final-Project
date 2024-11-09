@@ -12,13 +12,13 @@ public class FabricModel {
         ResultSet rst = CrudUtil.execute("select fabric_id from fabric order by fabric_id desc limit 1");
 
         if (rst.next()) {
-            String lastId = rst.getString(1); // Last employee ID
+            String lastId = rst.getString(1); // Last fabric ID
             String substring = lastId.substring(1); // Extract the numeric part
             int i = Integer.parseInt(substring); // Convert the numeric part to integer
             int newIdIndex = i + 1; // Increment the number by 1
-            return String.format("F%03d", newIdIndex); // Return the new employee ID in format Fnnn
+            return String.format("F%03d", newIdIndex); // Return the new fabric ID in format Fnnn
         }
-        return "F001"; // Return the default employee ID if no data is found
+        return "F001"; // Return the default fabric ID if no data is found
     }
 
     public boolean saveFabric(FabricDTO fabricDTO) throws SQLException {
@@ -79,10 +79,10 @@ public class FabricModel {
 
         if (rst.next()) {
             return new FabricDTO(
-                    rst.getString(1),  // Employee ID
-                    rst.getString(2),  // Name
-                    rst.getDouble(3),  // Contact
-                    rst.getDouble(4)
+                    rst.getString(1),  // fabric ID
+                    rst.getString(2),  // color
+                    rst.getDouble(3),  // weight
+                    rst.getDouble(4) //width
             );
         }
         return null;

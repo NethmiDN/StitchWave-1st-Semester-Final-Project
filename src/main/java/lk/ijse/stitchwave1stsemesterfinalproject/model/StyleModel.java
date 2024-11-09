@@ -1,7 +1,6 @@
 package lk.ijse.stitchwave1stsemesterfinalproject.model;
 
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.StyleDTO;
-import lk.ijse.stitchwave1stsemesterfinalproject.dto.SupplierOrderDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 
 import java.sql.ResultSet;
@@ -13,13 +12,13 @@ public class StyleModel {
         ResultSet rst = CrudUtil.execute("select style_id from style order by style_id desc limit 1");
 
         if (rst.next()) {
-            String lastId = rst.getString(1); // Last order ID
+            String lastId = rst.getString(1); // Last Style ID
             String substring = lastId.substring(1); // Extract the numeric part
             int i = Integer.parseInt(substring); // Convert the numeric part to integer
             int newIdIndex = i + 1; // Increment the number by 1
-            return String.format("L%03d", newIdIndex); // Return the new order ID in format Lnnn
+            return String.format("L%03d", newIdIndex); // Return the new Style ID in format Lnnn
         }
-        return "L001"; // Return the default order ID if no data is found
+        return "L001"; // Return the default Style ID if no data is found
     }
 
     public boolean saveStyle(StyleDTO styleDTO) throws SQLException {
@@ -40,11 +39,11 @@ public class StyleModel {
 
         while (rst.next()) {
             StyleDTO styleDTO = new StyleDTO(
-                    rst.getString(1),  // order ID
-                    rst.getString(2),
+                    rst.getString(1),  // Style ID
+                    rst.getString(2), //size
                     rst.getInt(3),  // qty
-                    rst.getString(4),  // date
-                    rst.getString(5) //supplierid
+                    rst.getString(4),  // employee ID
+                    rst.getString(5) //stock ID
             );
             styleDTOS.add(styleDTO);
         }
@@ -83,11 +82,11 @@ public class StyleModel {
 
         if (rst.next()) {
             return new StyleDTO(
-                    rst.getString(1),  // Payment ID
-                    rst.getString(2),
-                    rst.getInt(3),  // Amount
-                    rst.getString(4), // Date
-                    rst.getString(5)
+                    rst.getString(1),  // Style ID
+                    rst.getString(2), // size
+                    rst.getInt(3),  // Qty
+                    rst.getString(4), // employee id
+                    rst.getString(5) // stock id
             );
         }
         return null;
@@ -98,11 +97,11 @@ public class StyleModel {
 
         if (rst.next()) {
             return new StyleDTO(
-                    rst.getString(1),  // Payment ID
-                    rst.getString(2),
-                    rst.getInt(3),  // Amount
-                    rst.getString(4), // Date
-                    rst.getString(5)
+                    rst.getString(1),  // style ID
+                    rst.getString(2), //size
+                    rst.getInt(3),  // qty
+                    rst.getString(4), // employee id
+                    rst.getString(5) // stock id
             );
         }
         return null;

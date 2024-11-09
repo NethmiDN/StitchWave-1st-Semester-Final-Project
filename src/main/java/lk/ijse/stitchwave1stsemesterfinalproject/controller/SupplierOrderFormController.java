@@ -73,9 +73,6 @@ public class SupplierOrderFormController implements Initializable {
     private Label supidlbl;
 
     @FXML
-    private TextField supidtxt;
-
-    @FXML
     private Label suporderdate;
 
     @FXML
@@ -175,6 +172,10 @@ public class SupplierOrderFormController implements Initializable {
 
     @FXML
     void resetbtnOnAction(ActionEvent event) throws SQLException {
+        cmbsupid.setValue(null);
+        cmbsupid.setPromptText("Select customer Id");
+
+        supplierName.setText("");
         refreshPage();
     }
 
@@ -188,11 +189,6 @@ public class SupplierOrderFormController implements Initializable {
         // Define regex patterns for validation
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
@@ -205,7 +201,7 @@ public class SupplierOrderFormController implements Initializable {
             qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color: red;");
         }
 
-        // Save customer if all fields are valid
+        // Save supplier order if all fields are valid
         if (isValidQty) {
             SupplierOrderDTO supplierOrderDTO = new SupplierOrderDTO(order_id, qty, date, supplier_id);
 
@@ -225,15 +221,11 @@ public class SupplierOrderFormController implements Initializable {
         String order_id = lblid.getText();
         Integer qty = Integer.valueOf(qtytxt.getText());
         LocalDate date = LocalDate.parse(suporderdate.getText());
-//        String supplier_id = supidtxt.getText();
         String supplier_id = cmbsupid.getValue();
 
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        Pattern compile = Pattern.compile(namePattern);
-//        System.out.println(compile.matcher(name).matches());
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
-
 
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
 
@@ -273,6 +265,4 @@ public class SupplierOrderFormController implements Initializable {
             }
         }
     }
-
-
 }

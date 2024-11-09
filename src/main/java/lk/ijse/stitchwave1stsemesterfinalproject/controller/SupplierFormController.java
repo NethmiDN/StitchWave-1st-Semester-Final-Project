@@ -167,11 +167,6 @@ public class SupplierFormController implements Initializable {
         String namePattern = "^[A-Za-z ]+$";
         String contactPattern = "^(\\d+)||((\\d+\\.)(\\d){2})$";
 
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidName = name.matches(namePattern);
         boolean isValidContact = contact.matches(contactPattern);
@@ -214,8 +209,6 @@ public class SupplierFormController implements Initializable {
         String namePattern = "^[A-Za-z ]+$";
         String contactPattern = "^(\\d+)||((\\d+\\.)(\\d){2})$";
 
-//        Pattern compile = Pattern.compile(namePattern);
-//        System.out.println(compile.matcher(name).matches());
         boolean isValidName = name.matches(namePattern);
         boolean isValidContact = contact.matches(contactPattern);
 
@@ -244,5 +237,4 @@ public class SupplierFormController implements Initializable {
             }
         }
     }
-
 }

@@ -87,7 +87,7 @@
             <Image url="@../assets/img/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lb" alignment="CENTER" layoutX="490.0" layoutY="14.0" text="Supplier Form" textFill="#343131">
+      <Label fx:id="lb" alignment="CENTER" layoutX="432.0" layoutY="14.0" text="Supplier Form" textFill="#343131">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>

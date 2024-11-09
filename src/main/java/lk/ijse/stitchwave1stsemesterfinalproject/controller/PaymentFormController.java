@@ -164,13 +164,8 @@ public class PaymentFormController implements Initializable {
         LocalDate date = LocalDate.parse(paymentdate.getText());
 
         // Define regex patterns for validation
-        Double amountPattern = Double.valueOf("^\\d{1,7}(\\.\\d{1,2})?$");
+        String amountPattern = String.valueOf("^\\d{1,7}(\\.\\d{1,2})?$");
 
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidAmount = String.valueOf(amount).matches(String.valueOf(amountPattern));
 
@@ -206,8 +201,6 @@ public class PaymentFormController implements Initializable {
 
         Double amountPattern = Double.valueOf("^(\\d{1,7}(\\.\\d{1,2})?)$");
 
-//        Pattern compile = Pattern.compile(namePattern);
-//        System.out.println(compile.matcher(name).matches());
         boolean isValidAmount = String.valueOf(amount).matches(String.valueOf(amountPattern));
 
         amounttxt.setStyle(amounttxt.getStyle() + ";-fx-border-color:  #091057;");

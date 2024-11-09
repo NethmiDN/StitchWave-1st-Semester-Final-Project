@@ -59,9 +59,6 @@ public class SewnClothesStockFormController implements Initializable {
     private TextField qtytxt;
 
     @FXML
-    private TextField fabidtxt;
-
-    @FXML
     private Button resetbtn;
 
     @FXML
@@ -148,9 +145,9 @@ public class SewnClothesStockFormController implements Initializable {
         if (selectedItem != null) {
             lblid.setText(selectedItem.getStock_id());
             qtytxt.setText(String.valueOf(selectedItem.getQty()));
+            cmbfabid.setValue(selectedItem.getFabric_id()); // Set ComboBox to the correct fabric ID
 
             savebtn.setDisable(true);
-
             dltbtn.setDisable(false);
             updatebtn.setDisable(false);
         }
@@ -158,6 +155,9 @@ public class SewnClothesStockFormController implements Initializable {
 
     @FXML
     void resetbtnOnAction(ActionEvent event) throws SQLException {
+        cmbfabid.setValue(null);
+        cmbfabid.setPromptText("Select customer Id");
+
         refreshPage();
     }
 
@@ -170,17 +170,11 @@ public class SewnClothesStockFormController implements Initializable {
         // Define regex patterns for validation
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
         // Reset input field styles
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
-        //fabidtxt.setStyle(fabidtxt.getStyle() + ";-fx-border-color:  #091057;");
 
         // Highlight invalid fields in red
 
@@ -188,7 +182,7 @@ public class SewnClothesStockFormController implements Initializable {
             qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color: red;");
         }
 
-        // Save customer if all fields are valid
+        // Save stock if all fields are valid
         if (isValidQty) {
             SewnClothesStockDTO sewnClothesStockDTO = new SewnClothesStockDTO(stock_id, qty, fabric_id);
 
@@ -211,13 +205,10 @@ public class SewnClothesStockFormController implements Initializable {
 
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
-//        Pattern compile = Pattern.compile(namePattern);
-//        System.out.println(compile.matcher(name).matches());
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
 
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
-        //fabidtxt.setStyle(fabidtxt.getStyle() + ";-fx-border-color:  #091057;");
 
         if (!isValidQty) {
             qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color: red;");

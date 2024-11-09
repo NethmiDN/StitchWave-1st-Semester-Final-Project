@@ -181,13 +181,6 @@ public class FabricFormController  implements Initializable {
         String weightKgPattern = "^(\\d|[1-9]\\d)(\\.\\d+)?$";
         String widthInchPattern = "^(\\d|[1-9]\\d)(\\.\\d+)?$";
 
-
-
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidColor = color.matches(colorPattern);
         boolean isValidWeight_kg = Pattern.compile(weightKgPattern).matcher(weighttxt.getText()).matches();
@@ -238,13 +231,6 @@ public class FabricFormController  implements Initializable {
         String weightKgPattern = "^(\\d|[1-9]\\d)(\\.\\d+)?$";
         String widthInchPattern = "^(\\d|[1-9]\\d)(\\.\\d+)?$";
 
-
-
-//        (1)
-//        Pattern compile = Pattern.compile(namePattern);
-//        boolean isValidName = compile.matcher(name).matches();
-
-//        (2)
 //        Validate each field using regex patterns
         boolean isValidColor = color.matches(colorPattern);
         boolean isValidWeight_kg = Pattern.compile(weightKgPattern).matcher(weighttxt.getText()).matches();
@@ -280,5 +266,4 @@ public class FabricFormController  implements Initializable {
             }
         }
     }
-
 }

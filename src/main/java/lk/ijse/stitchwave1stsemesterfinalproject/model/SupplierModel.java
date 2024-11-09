@@ -37,7 +37,7 @@ public class SupplierModel {
 
         while (rst.next()) {
             SupplierDTO supplierDTO = new SupplierDTO(
-                    rst.getString(1),  // Employee ID
+                    rst.getString(1),  // Supplier ID
                     rst.getString(2),  // Name
                     rst.getString(3)  // Contact
             );
@@ -76,7 +76,7 @@ public class SupplierModel {
 
         if (rst.next()) {
             return new SupplierDTO(
-                    rst.getString(1),  // Employee ID
+                    rst.getString(1),  // Supplier ID
                     rst.getString(2),  // Name
                     rst.getString(3)  // Contact
             );

@@ -39,10 +39,10 @@ public class SupplierOrderModel {
 
         while (rst.next()) {
             SupplierOrderDTO supplierOrderDTO = new SupplierOrderDTO(
-                    rst.getString(1),  // order ID
+                    rst.getString(1),  // Supplier order Id
                     rst.getInt(2),  // qty
                     rst.getDate(3).toLocalDate(),  // date
-                    rst.getString(4) //supplierid
+                    rst.getString(4) //supplier Id
             );
             supplierOrderDTOS.add(supplierOrderDTO);
         }
@@ -80,10 +80,10 @@ public class SupplierOrderModel {
 
         if (rst.next()) {
             return new SupplierOrderDTO(
-                    rst.getString(1),  // Payment ID
-                    rst.getInt(2),  // Amount
+                    rst.getString(1),  // Supplier order Id
+                    rst.getInt(2),  // Qty
                     rst.getDate(3).toLocalDate() , // Date
-                    rst.getString(4)
+                    rst.getString(4) // Supplier Id
             );
         }
         return null;

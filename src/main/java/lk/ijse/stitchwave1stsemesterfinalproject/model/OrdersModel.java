@@ -1,7 +1,6 @@
 package lk.ijse.stitchwave1stsemesterfinalproject.model;
 
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.OrdersDTO;
-import lk.ijse.stitchwave1stsemesterfinalproject.dto.SupplierOrderDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 
 import java.sql.ResultSet;
@@ -43,8 +42,8 @@ public class OrdersModel {
                     rst.getString(1),  // order ID
                     rst.getDate(2).toLocalDate(),  // date
                     rst.getInt(3),  // qty
-                    rst.getString(4), //supplierid
-                    rst.getString(5)
+                    rst.getString(4), //customer id
+                    rst.getString(5) // payment id
             );
             ordersDTOS.add(ordersDTO);
         }
@@ -83,11 +82,11 @@ public class OrdersModel {
 
         if (rst.next()) {
             return new OrdersDTO(
-                    rst.getString(1),  // Payment ID
+                    rst.getString(1),  // Order ID
                     rst.getDate(2).toLocalDate() , // Date
-                    rst.getInt(3),  // Amount
-                    rst.getString(4),
-                    rst.getString(5)
+                    rst.getInt(3),  // qty
+                    rst.getString(4), // customer id
+                    rst.getString(5) // payment id
             );
         }
         return null;
