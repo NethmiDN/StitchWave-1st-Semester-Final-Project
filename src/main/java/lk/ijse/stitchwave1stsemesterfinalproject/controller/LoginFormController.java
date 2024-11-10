@@ -6,10 +6,12 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
@@ -23,7 +25,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class LoginFormController {
+public class LoginFormController implements Initializable {
 
     @FXML
     private AnchorPane bodyPane;
@@ -66,15 +68,13 @@ public class LoginFormController {
     public void initialize(URL url, ResourceBundle resources) {
 
         txtUsername.requestFocus();
-    }
 
-    /*public void initialize(URL location, ResourceBundle resources) {
-        welcomePane.setOnKeyPressed(e -> {
+        bodyPane.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.ENTER){
                 btnLogin.fire();
             }
         });
-    }*/
+    }
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws SQLException {
