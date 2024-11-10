@@ -164,7 +164,6 @@ public class SupplierOrderFormController implements Initializable {
             cmbsupid.setValue(selectedItem.getSupplier_id());
 
             savebtn.setDisable(true);
-
             dltbtn.setDisable(false);
             updatebtn.setDisable(false);
         }

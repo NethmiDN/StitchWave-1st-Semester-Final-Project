@@ -77,29 +77,14 @@ public class StyleModel {
         return style_ids;
     }
 
-    public StyleDTO findByEmpId(String selectedEmpId) throws SQLException {
-        ResultSet rst = CrudUtil.execute("select * from style where style_id=?", selectedEmpId);
+    public StyleDTO findById(String selectedStyleId) throws SQLException {
+        ResultSet rst = CrudUtil.execute("select * from style where style_id=?", selectedStyleId);
 
         if (rst.next()) {
             return new StyleDTO(
                     rst.getString(1),  // Style ID
                     rst.getString(2), // size
                     rst.getInt(3),  // Qty
-                    rst.getString(4), // employee id
-                    rst.getString(5) // stock id
-            );
-        }
-        return null;
-    }
-
-    public StyleDTO findByStockId(String selectedStockId) throws SQLException {
-        ResultSet rst = CrudUtil.execute("select * from style where style_id=?", selectedStockId);
-
-        if (rst.next()) {
-            return new StyleDTO(
-                    rst.getString(1),  // style ID
-                    rst.getString(2), //size
-                    rst.getInt(3),  // qty
                     rst.getString(4), // employee id
                     rst.getString(5) // stock id
             );

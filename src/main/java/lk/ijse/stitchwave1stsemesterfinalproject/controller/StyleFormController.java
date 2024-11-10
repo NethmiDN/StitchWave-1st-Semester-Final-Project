@@ -123,7 +123,6 @@ public class StyleFormController implements Initializable {
 
         String nextStyleID = styleModel.getNextStyleId();
         idlbl.setText(nextStyleID);
-
         sizetxt.setText("");
         qtytxt.setText("");
 
@@ -195,7 +194,6 @@ public class StyleFormController implements Initializable {
 
         employeenamelbl.setText("");
         refreshPage();
-
     }
 
     @FXML
@@ -257,7 +255,6 @@ public class StyleFormController implements Initializable {
         boolean isValidSize = size.matches(sizePattern);
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
-
         sizetxt.setStyle(sizetxt.getStyle() + ";-fx-border-color:  #091057;");
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
 
@@ -316,5 +313,4 @@ public class StyleFormController implements Initializable {
             SewnClothesStockDTO sewnClothesStockDTO = sewnClothesStockModel.findById(selectedStockId);
         }
     }
-
 }
