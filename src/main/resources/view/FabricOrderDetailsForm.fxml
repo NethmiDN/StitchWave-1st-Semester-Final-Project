@@ -58,7 +58,7 @@
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="clothesordertable" layoutX="14.0" layoutY="250.0" onMouseClicked="#onClickTable" prefHeight="434.0" prefWidth="979.0">
+      <TableView fx:id="fabricordertable" layoutX="14.0" layoutY="250.0" onMouseClicked="#onClickTable" prefHeight="434.0" prefWidth="979.0">
          <columns>
             <TableColumn fx:id="fabricidclmn" prefWidth="492.00004291534424" text="Fabric Id" />
             <TableColumn fx:id="orderidclmn" prefWidth="487.20001220703125" text="Order Id" />

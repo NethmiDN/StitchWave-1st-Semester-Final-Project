@@ -10,23 +10,26 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.FabricOrderTM;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.FabricTM;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.SupplierOrderTM;
 
 public class FabricOrderDetailsFormController {
 
     @FXML
-    private TableView<?> clothesordertable;
+    private TableView<FabricOrderTM> fabricordertable;
 
     @FXML
-    private ComboBox<?> cmbfabricid;
+    private ComboBox<FabricTM> cmbfabricid;
 
     @FXML
-    private ComboBox<?> cmborderid;
+    private ComboBox<SupplierOrderTM> cmborderid;
 
     @FXML
     private Button dltbtn;
 
     @FXML
-    private TableColumn<?, ?> fabricidclmn;
+    private TableColumn<FabricTM, String> fabricidclmn;
 
     @FXML
     private Label fabricidlbl;
@@ -41,7 +44,7 @@ public class FabricOrderDetailsFormController {
     private Label lb;
 
     @FXML
-    private TableColumn<?, ?> orderidclmn;
+    private TableColumn<SupplierOrderTM, String> orderidclmn;
 
     @FXML
     private Label orderidlbl;
