@@ -17,9 +17,11 @@ import lk.ijse.stitchwave1stsemesterfinalproject.dto.UserDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.model.UserModel;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class LoginFormController {
 
@@ -61,9 +63,18 @@ public class LoginFormController {
     private boolean isPasswordVisible = false;
 
     @FXML
-    public void initialize() {
+    public void initialize(URL url, ResourceBundle resources) {
+
         txtUsername.requestFocus();
     }
+
+    /*public void initialize(URL location, ResourceBundle resources) {
+        welcomePane.setOnKeyPressed(e -> {
+            if(e.getCode() == KeyCode.ENTER){
+                btnLogin.fire();
+            }
+        });
+    }*/
 
     @FXML
     void btnLoginOnAction(ActionEvent event) throws SQLException {
