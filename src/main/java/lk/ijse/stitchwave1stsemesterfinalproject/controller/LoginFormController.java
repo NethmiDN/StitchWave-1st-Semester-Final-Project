@@ -6,12 +6,10 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
@@ -19,13 +17,11 @@ import lk.ijse.stitchwave1stsemesterfinalproject.dto.UserDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.model.UserModel;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
-public class LoginFormController implements Initializable {
+public class LoginFormController {
 
     @FXML
     private AnchorPane bodyPane;
@@ -65,15 +61,8 @@ public class LoginFormController implements Initializable {
     private boolean isPasswordVisible = false;
 
     @FXML
-    public void initialize(URL url, ResourceBundle resources) {
-
+    public void initialize() {
         txtUsername.requestFocus();
-
-        bodyPane.setOnKeyPressed(e -> {
-            if(e.getCode() == KeyCode.ENTER){
-                btnLogin.fire();
-            }
-        });
     }
 
     @FXML
