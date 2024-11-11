@@ -35,7 +35,6 @@ CREATE TABLE fabric (
                         weight_kg DECIMAL(10, 4),
                         width_inch DECIMAL(10, 4)
 );
-
 CREATE TABLE sewn_clothes_stock (
                                     stock_id VARCHAR(6) NOT NULL PRIMARY KEY,
                                     qty INT,
@@ -77,10 +76,17 @@ CREATE TABLE user (
 );
 
 CREATE TABLE clothes_order (
-                               stock_id VARCHAR(6),
                                order_id VARCHAR(6),
+                               stock_id VARCHAR(6),
+                               date DATE,
+                               qty INT,
+                               customer_id VARCHAR(6),
+                               payment_id VARCHAR(6),
+                               FOREIGN KEY (order_id) REFERENCES orders(order_id) ON UPDATE CASCADE ON DELETE CASCADE,
                                FOREIGN KEY (stock_id) REFERENCES sewn_clothes_stock(stock_id) ON UPDATE CASCADE ON DELETE CASCADE,
-                               FOREIGN KEY (order_id) REFERENCES orders(order_id) ON UPDATE CASCADE ON DELETE CASCADE
+                               FOREIGN KEY (customer_id) REFERENCES customer(customer_id) ON UPDATE CASCADE ON DELETE CASCADE,
+                               FOREIGN KEY (payment_id) REFERENCES payment(payment_id) ON UPDATE CASCADE ON DELETE CASCADE
+
 );
 
 CREATE TABLE fabric_order (

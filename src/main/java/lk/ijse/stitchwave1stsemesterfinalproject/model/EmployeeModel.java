@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class EmployeeModel {
     public String getNextEmployeeId() throws SQLException {
-        ResultSet rst = CrudUtil.execute("select employeeId from employee order by employeeId desc limit 1");
+        ResultSet rst = CrudUtil.execute("select employee_id from employee order by employee_id desc limit 1");
 
         if (rst.next()) {
             String lastId = rst.getString(1); // Last employee ID
@@ -48,7 +48,7 @@ public class EmployeeModel {
 
     public boolean updateEmployee(EmployeeDTO employeeDTO) throws SQLException {
         return CrudUtil.execute(
-                "update employee set name=?, contact=? where employeeId=?",
+                "update employee set name=?, contact=? where employee_id=?",
                 employeeDTO.getName(),
                 employeeDTO.getContact(),
                 employeeDTO.getEmployeeId()
@@ -56,11 +56,11 @@ public class EmployeeModel {
     }
 
     public boolean deleteEmployee(String employeeId) throws SQLException {
-        return CrudUtil.execute("delete from employee where employeeId=?", employeeId);
+        return CrudUtil.execute("delete from employee where employee_id=?", employeeId);
     }
 
     public ArrayList<String> getAllEmployeeIds() throws SQLException {
-        ResultSet rst = CrudUtil.execute("select employeeId from employee");
+        ResultSet rst = CrudUtil.execute("select employee_id from employee");
 
         ArrayList<String> employeeIds = new ArrayList<>();
 
@@ -72,7 +72,7 @@ public class EmployeeModel {
     }
 
     public EmployeeDTO findById(String selectedEmpId) throws SQLException {
-        ResultSet rst = CrudUtil.execute("select * from employee where employeeId=?", selectedEmpId);
+        ResultSet rst = CrudUtil.execute("select * from employee where employee_id=?", selectedEmpId);
 
         if (rst.next()) {
             return new EmployeeDTO(

@@ -40,7 +40,7 @@ public class SupplierOrderModel {
         while (rst.next()) {
             SupplierOrderDTO supplierOrderDTO = new SupplierOrderDTO(
                     rst.getString(1),  // Supplier order Id
-                    rst.getInt(2),  // qty
+                    rst.getDouble(2),  // qty
                     rst.getDate(3).toLocalDate(),  // date
                     rst.getString(4) //supplier Id
             );
@@ -81,7 +81,7 @@ public class SupplierOrderModel {
         if (rst.next()) {
             return new SupplierOrderDTO(
                     rst.getString(1),  // Supplier order Id
-                    rst.getInt(2),  // Qty
+                    rst.getDouble(2),  // Qty
                     rst.getDate(3).toLocalDate() , // Date
                     rst.getString(4) // Supplier Id
             );
