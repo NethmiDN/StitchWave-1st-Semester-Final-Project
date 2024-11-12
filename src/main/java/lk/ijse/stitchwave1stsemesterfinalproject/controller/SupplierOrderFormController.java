@@ -181,12 +181,12 @@ public class SupplierOrderFormController implements Initializable {
     @FXML
     void savebtnOnAction(ActionEvent event) throws SQLException {
         String order_id = lblid.getText();
-        Integer qty = Integer.valueOf(qtytxt.getText());
+        Double qty = Double.valueOf(qtytxt.getText());
         LocalDate date = LocalDate.parse(suporderdate.getText());
         String supplier_id = cmbsupid.getValue();
 
         // Define regex patterns for validation
-        String quantityPattern = "^([1-9]\\d{0,4}|0)$";
+        String quantityPattern = "^([1-9]\\d{0,4}(\\.\\d{1,2})?|0(\\.\\d{1,2})?)$";
 
 //        Validate each field using regex patterns
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
@@ -218,11 +218,11 @@ public class SupplierOrderFormController implements Initializable {
     @FXML
     void updatebtnOnAction(ActionEvent event) throws SQLException {
         String order_id = lblid.getText();
-        Integer qty = Integer.valueOf(qtytxt.getText());
+        Double qty = Double.valueOf(qtytxt.getText());
         LocalDate date = LocalDate.parse(suporderdate.getText());
         String supplier_id = cmbsupid.getValue();
 
-        String quantityPattern = "^([1-9]\\d{0,4}|0)$";
+        String quantityPattern = "^([1-9]\\d{0,4}(\\.\\d{1,2})?|0(\\.\\d{1,2})?)$";
 
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
 
