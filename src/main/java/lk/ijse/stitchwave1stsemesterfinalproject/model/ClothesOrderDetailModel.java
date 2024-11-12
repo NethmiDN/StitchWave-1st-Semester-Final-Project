@@ -30,21 +30,21 @@ public class ClothesOrderDetailModel {
         try {
             CrudUtil.setAutoCommit(false);
 
-            ResultSet rst = CrudUtil.execute("SELECT qty FROM sewn_clothes_stock WHERE stock_id = ?", clothesOrderDetailDTO.getStock_id());
+            ResultSet rst = CrudUtil.execute("SELECT qty FROM sewn_clothes_stock WHERE stock_id = ?", clothesOrderDetailDTO.getStock_Id());
             if (rst.next()) {
                 int currentStockQty = rst.getInt("qty");
 
                 if (currentStockQty >= orderQty) {
                     boolean orderSaved = CrudUtil.execute(
                             "INSERT INTO clothes_order (stock_id, order_id) VALUES (?, ?)",
-                            clothesOrderDetailDTO.getStock_id(),
-                            clothesOrderDetailDTO.getOrder_id()
+                            clothesOrderDetailDTO.getStock_Id(),
+                            clothesOrderDetailDTO.getOrder_Id()
                     );
 
                     boolean stockUpdated = CrudUtil.execute(
                             "UPDATE sewn_clothes_stock SET qty = qty - ? WHERE stock_id = ?",
                             orderQty,
-                            clothesOrderDetailDTO.getStock_id()
+                            clothesOrderDetailDTO.getStock_Id()
                     );
 
                     if (orderSaved && stockUpdated) {
