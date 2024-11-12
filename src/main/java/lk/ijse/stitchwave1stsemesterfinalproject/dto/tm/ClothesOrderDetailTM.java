@@ -2,14 +2,18 @@ package lk.ijse.stitchwave1stsemesterfinalproject.dto.tm;
 
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClothesOrderDetailTM {
-    private String stock_id;
-    private int stock_qty;
     private String order_id;
-    private int order_qty;
+    private String stock_id;
+    private LocalDate date;
+    private int qty;
+    private String customer_id;
+    private String payment_id;
 }

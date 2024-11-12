@@ -6,51 +6,71 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="clothesorderdetailap" prefHeight="698.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stitchwave1stsemesterfinalproject.controller.ClothesOrderDetailsFormController">
+<AnchorPane fx:id="ordersap" prefHeight="698.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stitchwave1stsemesterfinalproject.controller.ClothesOrderDetailsFormController">
    <children>
+      <HBox layoutX="14.0" layoutY="62.0" prefHeight="30.0" prefWidth="334.0">
+         <children>
+            <Label fx:id="orderidlbl" prefHeight="31.0" prefWidth="99.0" text="Order Id">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="idlbl" prefHeight="28.0" prefWidth="218.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="93.0" prefHeight="38.0" prefWidth="334.0">
+         <children>
+            <Label fx:id="datel" prefHeight="49.0" prefWidth="58.0" text="Date">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="datelbl" prefHeight="52.0" prefWidth="218.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="397.0" layoutY="179.0" prefHeight="41.0" prefWidth="322.0">
+         <children>
+            <Label fx:id="qtylbl" prefHeight="43.0" prefWidth="82.0" text="Quantity">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="qtytxt" prefHeight="27.0" prefWidth="241.0" style="-fx-background-color: transparent; -fx-border-color: #091057; -fx-border-width: 0px 0px 2px;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
       <ImageView fx:id="iconimg" fitHeight="111.0" fitWidth="124.0" layoutX="841.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/img/logo.png" />
          </image>
       </ImageView>
-      <HBox layoutX="14.0" layoutY="55.0" prefHeight="42.0" prefWidth="726.0">
+      <HBox layoutX="14.0" layoutY="129.0" prefHeight="47.0" prefWidth="704.0">
          <children>
-            <Label fx:id="stockidlbl" prefHeight="42.0" prefWidth="79.0" text="Stock Id">
+            <Label fx:id="cusidlbl" prefHeight="47.0" prefWidth="94.0" text="Customer Id">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <ComboBox fx:id="cmbstockid" onAction="#cmbstockidOnAction" prefHeight="38.0" prefWidth="144.0" promptText="Select Stcok Id" />
-            <Label prefHeight="41.0" prefWidth="99.0" text="Stock Qty">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="stockqtylbl" prefHeight="42.0" prefWidth="374.0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <HBox layoutX="14.0" layoutY="117.0" prefHeight="42.0" prefWidth="751.0">
-         <children>
-            <Label fx:id="orderidlbl" prefHeight="42.0" prefWidth="79.0" text="Order Id">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="cmborderid" onAction="#cmborderidOnAction" prefHeight="38.0" prefWidth="145.0" promptText="Select Order Id" />
-            <Label prefHeight="42.0" prefWidth="94.0" text="Order Qty">
+            <ComboBox fx:id="cmbcusid" onAction="#cmbcusidOnAction" prefHeight="37.0" prefWidth="162.0" promptText="Select Customer Id" />
+            <Label prefHeight="41.0" prefWidth="99.0" text="Name">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
@@ -58,45 +78,88 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="orderqtylbl" prefHeight="42.0" prefWidth="377.0">
+            <Label fx:id="cusnamelbl" prefHeight="47.0" prefWidth="346.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="176.0" prefHeight="47.0" prefWidth="267.0">
+         <children>
+            <Label fx:id="paymentidlbl" prefHeight="47.0" prefWidth="86.0" text="Payment Id">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
+            <Label alignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbpayid" onAction="#cmbpayidOnAction" prefHeight="37.0" prefWidth="162.0" promptText="Select Payment Id" />
          </children>
       </HBox>
-      <Button fx:id="resetbtn" layoutX="14.0" layoutY="184.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
+      <Button fx:id="resetbtn" layoutX="16.0" layoutY="223.0" mnemonicParsing="false" onAction="#resetbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FF0000;" text="Reset">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="dltbtn" layoutX="296.0" layoutY="184.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
+      <Button fx:id="dltbtn" layoutX="286.0" layoutY="223.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="updatebtn" layoutX="565.0" layoutY="184.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
+      <Button fx:id="updatebtn" layoutX="558.0" layoutY="223.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="savebtn" layoutX="817.0" layoutY="184.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
+      <Button fx:id="savebtn" layoutX="834.0" layoutY="223.0" mnemonicParsing="false" onAction="#savebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #FFA24C;" text="Save">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <TableView fx:id="clothesordertable" layoutX="14.0" layoutY="250.0" onMouseClicked="#onClickTable" prefHeight="434.0" prefWidth="979.0">
+      <TableView fx:id="orderstable" layoutX="16.0" layoutY="272.0" onMouseClicked="#onClickTable" prefHeight="412.0" prefWidth="978.0">
          <columns>
-            <TableColumn fx:id="stockidclmn" prefWidth="199.99999713897705" text="Stock Id" />
-            <TableColumn fx:id="stockqtyclmn" prefWidth="280.0" text="Stock Qty" />
-            <TableColumn fx:id="orderidclmn" prefWidth="273.60003662109375" text="Order Id" />
-            <TableColumn fx:id="orderqtyclmn" prefWidth="227.199951171875" text="Order Qty" />
+            <TableColumn fx:id="orderidclmn" prefWidth="142.40002059936523" text="Order Id" />
+            <TableColumn fx:id="stockidclmn" prefWidth="159.99998474121094" text="Stock Id" />
+            <TableColumn fx:id="dateclmn" prefWidth="188.80001831054688" text="Date" />
+            <TableColumn fx:id="qtyclmn" prefWidth="156.79998779296875" text="Quantity" />
+            <TableColumn fx:id="cusidclmn" prefWidth="168.79998779296875" text="Customer Id" />
+            <TableColumn fx:id="paymentidclmn" prefWidth="163.99993896484375" text="Payment Id" />
          </columns>
       </TableView>
-      <Label fx:id="lb" layoutX="376.0" layoutY="14.0" text="Clothes Order Details  Form" textFill="#343131">
+      <Label fx:id="lb" layoutX="414.0" layoutY="6.0" text="Clothes Orders Form" textFill="#343131">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>
       </Label>
+      <HBox layoutX="329.0" layoutY="62.0" prefHeight="30.0" prefWidth="458.0">
+         <children>
+            <Label fx:id="stidlbl" prefHeight="35.0" prefWidth="70.0" text="Stock Id">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbstockid" onAction="#cmbstockidOnAction" prefHeight="37.0" prefWidth="162.0" promptText="Select Stock Id" />
+            <Label fx:id="stqtlb" prefHeight="30.0" prefWidth="51.0" text="Qty">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="qtlb" prefHeight="39.0" prefWidth="150.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -27,7 +27,7 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     private Button clothesorderdetailbtn, customerbtn, empbtn, fabricbtn,
-            fabricorderdetailbtn, orderbtn, paymentbtn, sewnclothesstockbtn,
+            fabricorderdetailbtn, paymentbtn, sewnclothesstockbtn,
             stylebtn, supplierbtn, supplierorderbtn;
 
     @Override
@@ -35,7 +35,6 @@ public class DashboardFormController implements Initializable {
         navigateTo("/view/EmployeeForm.fxml");
         initializeButtonEffect(empbtn);
         initializeButtonEffect(customerbtn);
-        initializeButtonEffect(orderbtn);
         initializeButtonEffect(paymentbtn);
         initializeButtonEffect(clothesorderdetailbtn);
         initializeButtonEffect(fabricbtn);
@@ -78,7 +77,6 @@ public class DashboardFormController implements Initializable {
 
         empbtn.setPrefSize(buttonWidth, buttonHeight);
         customerbtn.setPrefSize(buttonWidth, buttonHeight);
-        orderbtn.setPrefSize(buttonWidth, buttonHeight);
         paymentbtn.setPrefSize(buttonWidth, buttonHeight);
         clothesorderdetailbtn.setPrefSize(buttonWidth, buttonHeight);
         fabricbtn.setPrefSize(buttonWidth, buttonHeight);
@@ -112,7 +110,6 @@ public class DashboardFormController implements Initializable {
 
         empbtn.setStyle(resetStyle);
         customerbtn.setStyle(resetStyle);
-        orderbtn.setStyle(resetStyle);
         paymentbtn.setStyle(resetStyle);
         clothesorderdetailbtn.setStyle(resetStyle);
         fabricbtn.setStyle(resetStyle);
@@ -156,12 +153,6 @@ public class DashboardFormController implements Initializable {
     private void fabricorderdetailbtnOnAction(ActionEvent event) {
         navigateTo("/view/FabricOrderDetailsForm.fxml");
         onButtonClicked(fabricorderdetailbtn);
-    }
-
-    @FXML
-    private void orderbtnOnAction(ActionEvent event) {
-        navigateTo("/view/OrdersForm.fxml");
-        onButtonClicked(orderbtn);
     }
 
     @FXML

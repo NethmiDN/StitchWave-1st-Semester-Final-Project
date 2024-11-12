@@ -56,7 +56,7 @@ public class SewnClothesStockModel {
     }
 
     public boolean deleteStock(String stock_id) throws SQLException {
-        return CrudUtil.execute("delete from sew_clothes_stock where stock_id=?", stock_id);
+        return CrudUtil.execute("delete from sewn_clothes_stock where stock_id=?", stock_id);
     }
 
     public ArrayList<String> getAllStockIds() throws SQLException {

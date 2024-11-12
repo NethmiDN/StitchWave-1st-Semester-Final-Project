@@ -177,21 +177,6 @@
                         <Insets left="5.0" top="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="orderbtn" mnemonicParsing="false" onAction="#orderbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Orders">
-                     <font>
-                        <Font name="Comic Sans MS" size="17.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
-                           <color>
-                              <Color red="0.9263157844543457" green="0.8988693952560425" blue="0.8988693952560425" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <VBox.margin>
-                        <Insets left="5.0" top="20.0" />
-                     </VBox.margin>
-                  </Button>
                   <Button fx:id="paymentbtn" mnemonicParsing="false" onAction="#paymentbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Payment">
                      <font>
                         <Font name="Comic Sans MS" size="17.0" />
