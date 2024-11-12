@@ -11,7 +11,6 @@ import java.util.Objects;
 public class AppInitializer extends Application {
 
     public static void main(String[] args) {
-
         launch(args);
     }
 
