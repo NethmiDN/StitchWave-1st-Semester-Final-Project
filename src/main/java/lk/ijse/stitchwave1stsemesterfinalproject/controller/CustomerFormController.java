@@ -13,12 +13,13 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.CustomerDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.CustomerTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.model.CustomerModel;
+import lk.ijse.stitchwave1stsemesterfinalproject.db.DBConnection;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.time.LocalDate;
+import java.util.*;
 
 public class CustomerFormController implements Initializable {
 
@@ -33,6 +34,9 @@ public class CustomerFormController implements Initializable {
 
     @FXML
     private Label cusidlbl;
+
+    @FXML
+    private Button reportbtn;
 
     @FXML
     private TableView<CustomerTM> custable;
@@ -100,6 +104,7 @@ public class CustomerFormController implements Initializable {
 
         dltbtn.setDisable(true);
         updatebtn.setDisable(true);
+        reportbtn.setDisable(true);
     }
 
     private void refreshTable() throws SQLException {
@@ -148,6 +153,7 @@ public class CustomerFormController implements Initializable {
 
             dltbtn.setDisable(false);
             updatebtn.setDisable(false);
+            reportbtn.setDisable(false);
         }
     }
 
@@ -235,5 +241,53 @@ public class CustomerFormController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Fail to update customer...!").show();
             }
         }
+    }
+
+
+    @FXML
+    void reportbtnOnAction(ActionEvent event) {
+       /* try {
+            Connection connection = DBConnection.getInstance().getConnection();
+
+//            Map<String, Object> parameters = new HashMap<>();
+//            today - 2024 - 02 - 02
+//            TODAY -
+
+//            parameters.put("today",LocalDate.now().toString());
+//            <key , value>
+//            Initialize a map to hold the report parameters
+//            These parameters can be used inside the report (like displaying today's date)
+
+            // Initialize a map to hold the report parameters
+            // These parameters can be used inside the report (like displaying today's date)
+            Map<String, Object> parameters = new HashMap<>();
+
+            // Put the current date into the map with two different keys ("today" and "TODAY")
+            // You can refer to these keys in the Jasper report if needed
+            parameters.put("today", LocalDate.now().toString());
+            parameters.put("TODAY", LocalDate.now().toString());
+
+            // Compile the Jasper report from a JRXML file (report template)
+            // The report template is located in the "resources/report" folder of the project
+            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/report/Blank_A4_4.jrxml"));
+
+            // Fill the report with the compiled report object, parameters, and a database connection
+            // This prepares the report with real data from the database
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    parameters,
+                    connection
+            );
+
+            // Display the report in a viewer (this is a built-in JasperReports viewer)
+            // 'false' indicates that the window should not close the entire application when closed
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to load report..!");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "Data empty..!");
+            e.printStackTrace();
+        }*/
     }
 }

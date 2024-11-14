@@ -1,7 +1,9 @@
 package lk.ijse.stitchwave1stsemesterfinalproject.model;
 
 import lk.ijse.stitchwave1stsemesterfinalproject.db.DBConnection;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.SupplierDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.UserDTO;
+import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -94,5 +96,33 @@ public class UserModel {
         }
 
         return userList;
+    }
+
+    public ArrayList<String> getAllUserIds() throws SQLException {
+        ResultSet rst = CrudUtil.execute("select userId from user");
+
+        ArrayList<String> user_ids = new ArrayList<>();
+
+        while (rst.next()) {
+            user_ids.add(rst.getString(1));
+        }
+
+        return user_ids;
+    }
+
+    public UserDTO findById(String selectedUserId) throws SQLException {
+        ResultSet rst = CrudUtil.execute("select * from user where userId=?", selectedUserId);
+
+        if (rst.next()) {
+            return new UserDTO(
+                    rst.getString(1),  // user ID
+                    rst.getString(2),  // fName
+                    rst.getString(3),  // lname
+                    rst.getString(4), //uname
+                    rst.getString(5), //email
+                    rst.getString(6) //password
+            );
+        }
+        return null;
     }
 }

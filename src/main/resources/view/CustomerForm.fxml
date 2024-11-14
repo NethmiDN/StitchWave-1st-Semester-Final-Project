@@ -60,12 +60,12 @@
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="dltbtn" layoutX="294.0" layoutY="173.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
+      <Button fx:id="dltbtn" layoutX="427.0" layoutY="173.0" mnemonicParsing="false" onAction="#dltbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #C68FE6;" text="Delete">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="updatebtn" layoutX="566.0" layoutY="173.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
+      <Button fx:id="updatebtn" layoutX="632.0" layoutY="173.0" mnemonicParsing="false" onAction="#updatebtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #88C273;" text="Update">
          <font>
             <Font name="Comic Sans MS Bold" size="16.0" />
          </font>
@@ -92,5 +92,10 @@
             <Font name="Comic Sans MS Bold Italic" size="22.0" />
          </font>
       </Label>
+      <Button fx:id="reportbtn" layoutX="222.0" layoutY="173.0" mnemonicParsing="false" onAction="#reportbtnOnAction" prefHeight="31.0" prefWidth="160.0" style="-fx-background-color: #789DBC;" text="Generate Report">
+         <font>
+            <Font name="Comic Sans MS Bold" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

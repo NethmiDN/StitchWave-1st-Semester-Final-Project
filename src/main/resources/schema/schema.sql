@@ -35,7 +35,6 @@ CREATE TABLE fabric (
                         weight_kg DECIMAL(10, 4),
                         width_inch DECIMAL(10, 4)
 );
-
 CREATE TABLE sewn_clothes_stock (
                                     stock_id VARCHAR(6) NOT NULL PRIMARY KEY,
                                     qty INT,
@@ -81,6 +80,7 @@ CREATE TABLE clothes_order (
                                order_id VARCHAR(6),
                                FOREIGN KEY (stock_id) REFERENCES sewn_clothes_stock(stock_id) ON UPDATE CASCADE ON DELETE CASCADE,
                                FOREIGN KEY (order_id) REFERENCES orders(order_id) ON UPDATE CASCADE ON DELETE CASCADE
+
 );
 
 CREATE TABLE fabric_order (
