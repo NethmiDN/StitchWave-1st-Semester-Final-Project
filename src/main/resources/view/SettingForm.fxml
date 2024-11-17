@@ -99,7 +99,7 @@
       </HBox>
       <ImageView fitHeight="524.0" fitWidth="448.0" layoutX="541.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/img/animated-young-girl-with-curly-hair-using-laptop-cozy-home-office-desk_1143476-3563-removebg-preview.png" />
+            <Image url="@../assets/img/youngGirl.png" />
          </image>
       </ImageView>
    </children>
