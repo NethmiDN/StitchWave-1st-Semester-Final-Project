@@ -6,6 +6,8 @@ module lk.ijse.stitchwave1stsemesterfinalproject {
     requires lombok;
     requires java.sql;
     requires net.sf.jasperreports.core;
+    requires java.mail;
+
 
     opens lk.ijse.stitchwave1stsemesterfinalproject.dto.tm to javafx.base;
     opens lk.ijse.stitchwave1stsemesterfinalproject.controller to javafx.fxml;
