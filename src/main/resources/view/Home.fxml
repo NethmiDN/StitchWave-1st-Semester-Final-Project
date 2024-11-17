@@ -10,12 +10,12 @@
    <children>
       <ImageView fx:id="img1" fitHeight="663.0" fitWidth="691.0" layoutX="176.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../7d34a7090b420efe27516732b6ed4305-removebg-preview.png" />
+            <Image url="@../assets/img/7d34a7090b420efe27516732b6ed4305-removebg-preview.png" />
          </image>
       </ImageView>
       <ImageView fx:id="img2" fitHeight="395.0" fitWidth="396.0" layoutX="325.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../TEXTIMG-removebg-preview.png" />
+            <Image url="@../assets/img/TEXTIMG-removebg-preview.png" />
          </image>
       </ImageView>
       <ImageView fx:id="iconimg" fitHeight="111.0" fitWidth="124.0" layoutX="851.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">

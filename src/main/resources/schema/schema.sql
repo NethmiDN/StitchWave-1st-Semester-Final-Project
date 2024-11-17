@@ -84,7 +84,6 @@ CREATE TABLE clothes_order (
 );
 
 
-drop table fabric_order;
 CREATE TABLE fabric_order (
                               fabric_id VARCHAR(6),
                               order_id VARCHAR(6),

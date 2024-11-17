@@ -197,7 +197,7 @@
                      <children>
                         <ImageView fx:id="homebtn" fitHeight="35.0" fitWidth="31.0" onMouseClicked="#homebtnOnAction" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../icons8-home-30.png" />
+                              <Image url="@../assets/img/icons8-home-30.png" />
                            </image>
                            <HBox.margin>
                               <Insets top="90.0" />
@@ -205,7 +205,7 @@
                         </ImageView>
                         <ImageView fx:id="settingbtn" fitHeight="35.0" fitWidth="31.0" onMouseClicked="#settingbtnOnAction" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../png-transparent-settings-gear-icon-gear-configuration-set-up-thumbnail-removebg-preview.png" />
+                              <Image url="@../assets/img/png-transparent-settings-gear-icon-gear-configuration-set-up-thumbnail-removebg-preview.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="180.0" top="90.0" />
