@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
@@ -16,11 +17,19 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.stitchwave1stsemesterfinalproject.model.SewnClothesStockModel;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class DashboardFormController implements Initializable {
 
@@ -36,7 +45,11 @@ public class DashboardFormController implements Initializable {
     @FXML
     private Button clothesorderdetailbtn, customerbtn, empbtn, fabricbtn,
             paymentbtn, sewnclothesstockbtn,
-            stylebtn, supplierbtn, supplierorderbtn;
+            stylebtn, supplierbtn, supplierorderbtn,notificationbtn;
+
+    SewnClothesStockModel sewnClothesStockModel = new SewnClothesStockModel();
+
+    private ScheduledExecutorService scheduler;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -51,8 +64,98 @@ public class DashboardFormController implements Initializable {
         initializeButtonEffect(supplierbtn);
         initializeButtonEffect(supplierorderbtn);
 
+        notificationbtn.setVisible(false);
         onButtonClicked(empbtn);
         setButtonSizes();
+
+        // Initialize the scheduler for periodic stock checks
+        startStockCheckScheduler();
+    }
+
+    private void startStockCheckScheduler() {
+        scheduler = Executors.newSingleThreadScheduledExecutor();
+
+        scheduler.scheduleAtFixedRate(() -> {
+            try {
+                checkQtyAvaialbility();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }, 0, 2, TimeUnit.SECONDS);
+    }
+
+    @FXML
+    private void checkQtyAvaialbility() {
+        try {
+            Map<String, Integer> lowStockItems = sewnClothesStockModel.getLowStockItems(5000);
+
+            if (!lowStockItems.isEmpty()) {
+                StringBuilder alertText = new StringBuilder("⚠️ Low Stock Alert: ");
+                for (Map.Entry<String, Integer> entry : lowStockItems.entrySet()) {
+                    alertText.append(String.format("[%s: %d] ", entry.getKey(), entry.getValue()));
+                }
+
+                notificationbtn.setText(alertText.toString().trim());
+                if (!notificationbtn.isVisible()) {
+                    notificationbtn.setVisible(true);
+                    showNotificationAnimation(notificationbtn);
+                }
+            } else {
+                notificationbtn.setVisible(false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Failed to check stock quantities!").show();
+        }
+    }
+
+    private void showNotificationAnimation(Node node) {
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(300), node);
+        scaleTransition.setFromX(0.0);
+        scaleTransition.setFromY(0.0);
+        scaleTransition.setToX(1.0);
+        scaleTransition.setToY(1.0);
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(300), node);
+        fadeTransition.setFromValue(0.0);
+        fadeTransition.setToValue(1.0);
+
+        ParallelTransition parallelTransition = new ParallelTransition(scaleTransition, fadeTransition);
+        parallelTransition.play();
+    }
+
+    @FXML
+    public void notificationbtnOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LowStockPopup.fxml"));
+            AnchorPane popupContent = loader.load();
+
+            LowStockPopupController popupController = loader.getController();
+
+            popupController.setLowStockData(sewnClothesStockModel.getLowStockItems(5000));
+
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.setTitle("Low Stock Details");
+
+            popupStage.setScene(new Scene(popupContent));
+            popupStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Failed to load popup!").show();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Database error occurred!").show();
+        }
+    }
+
+    @Override
+    public void finalize() throws Throwable {
+        super.finalize();
+        if (scheduler != null && !scheduler.isShutdown()) {
+            scheduler.shutdown();
+        }
     }
 
     @FXML

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.stitchwave1stsemesterfinalproject.controller.LowStockPopupController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20" style="-fx-background-color: #f4f4f4; -fx-padding: 20;">
+         <children>
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #d9534f;" text="Low Stock Alert" />
+            <TableView fx:id="stockTable" prefHeight="300" prefWidth="560">
+               <columns>
+                  <TableColumn fx:id="colStockId" prefWidth="150" text="Stock Id" />
+                  <TableColumn fx:id="colQty" prefWidth="250" text="QTY" />
+                  <TableColumn fx:id="colFabric" prefWidth="150" text="FabricId" />
+               </columns>
+            </TableView>
+            <Button onAction="#onCloseButtonAction" prefWidth="100" style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-font-size: 14;" text="Close" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

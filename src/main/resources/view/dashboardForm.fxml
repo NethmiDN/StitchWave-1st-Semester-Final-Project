@@ -178,7 +178,7 @@
                         <Insets left="5.0" top="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="clothesorderdetailbtn" mnemonicParsing="false" onAction="#clothesorderdetailbtnOnAction" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Clothes Order Details">
+                  <Button fx:id="clothesorderdetailbtn" mnemonicParsing="false" onAction="#clothesorderdetailbtnOnAction" prefHeight="54.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Clothes Order Details">
                      <font>
                         <Font name="Comic Sans MS" size="17.0" />
                      </font>
@@ -193,14 +193,26 @@
                         <Insets left="5.0" top="20.0" />
                      </VBox.margin>
                   </Button>
-                  <HBox prefHeight="125.0" prefWidth="250.0">
+                  <Button fx:id="notificationbtn" mnemonicParsing="false" onAction="#notificationbtnOnAction" prefHeight="45.0" prefWidth="246.0" style="-fx-background-color: #ffcccb; -fx-background-radius: 10;" text="⚠️ Low Stock Alert ">
+                     <font>
+                        <Font name="Comic Sans MS" size="17.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="18.66" radius="8.245000000000001" width="16.32">
+                           <color>
+                              <Color red="0.8509804010391235" green="0.18431372940540314" blue="0.18431372940540314" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <HBox prefHeight="88.0" prefWidth="250.0">
                      <children>
                         <ImageView fx:id="homebtn" fitHeight="35.0" fitWidth="31.0" onMouseClicked="#homebtnOnAction" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/img/icons8-home-30.png" />
                            </image>
                            <HBox.margin>
-                              <Insets top="90.0" />
+                              <Insets top="65.0" />
                            </HBox.margin>
                         </ImageView>
                         <ImageView fx:id="settingbtn" fitHeight="35.0" fitWidth="31.0" onMouseClicked="#settingbtnOnAction" pickOnBounds="true" preserveRatio="true">
@@ -208,7 +220,7 @@
                               <Image url="@../assets/img/png-transparent-settings-gear-icon-gear-configuration-set-up-thumbnail-removebg-preview.png" />
                            </image>
                            <HBox.margin>
-                              <Insets left="180.0" top="90.0" />
+                              <Insets left="180.0" top="63.0" />
                            </HBox.margin>
                         </ImageView>
                      </children>

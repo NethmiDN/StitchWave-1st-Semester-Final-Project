@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SewnClothesStockModel {
 
@@ -61,9 +63,22 @@ public class SewnClothesStockModel {
         return CrudUtil.execute("delete from sewn_clothes_stock where stock_id=?", stock_id);
     }
 
-   /* public boolean chechStock() throws SQLException {
-        return CrudUtil.execute("SELECT count(*) FROM sewn_clothes_stock WHERE qty < 5000");
-    }*/
+    public Map<String, Integer> getLowStockItems(int threshold) throws SQLException {
+        Map<String, Integer> lowStockItems = new HashMap<>();
+
+        ResultSet rst = CrudUtil.execute(
+                "SELECT stock_id, qty FROM sewn_clothes_stock WHERE qty < ?",
+                threshold
+        );
+
+        while (rst.next()) {
+            String stockId = rst.getString("stock_id");
+            int quantity = rst.getInt("qty");
+            lowStockItems.put(stockId, quantity);
+        }
+
+        return lowStockItems;
+    }
 
     public ArrayList<String> getAllStockIds() throws SQLException {
         ResultSet rst = CrudUtil.execute("select stock_id from sewn_clothes_stock");
