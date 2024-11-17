@@ -90,7 +90,7 @@ public class EmployeeFormController implements Initializable {
     private void refreshPage() throws SQLException {
         refreshTable();
 
-        String nextEmployeeID = employeeModel.getNextEmployeeId();
+        String nextEmployeeID = employeeModel.getNextemployee_id();
         lblid.setText(nextEmployeeID);
 
         nametxt.setText("");

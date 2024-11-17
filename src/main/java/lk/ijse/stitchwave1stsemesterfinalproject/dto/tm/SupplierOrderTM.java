@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 public class SupplierOrderTM {
     private String order_id;
-    private Integer qty_kg;
+    private double qty_kg;
     private LocalDate date;
     private String supplier_id;
 }

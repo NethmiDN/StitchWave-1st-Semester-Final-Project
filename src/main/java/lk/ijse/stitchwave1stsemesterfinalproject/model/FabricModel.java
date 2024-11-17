@@ -48,20 +48,6 @@ public class FabricModel {
         return fabricDTOS;
     }
 
-    public boolean updateFabric(FabricDTO fabricDTO) throws SQLException {
-        return CrudUtil.execute(
-                "update fabric set color=?, weight_kg=?, width_inch=? where fabric_id=?",
-                fabricDTO.getColor(),
-                fabricDTO.getWeight_kg(),
-                fabricDTO.getWidth_inch(),
-                fabricDTO.getFabric_id()
-        );
-    }
-
-    public boolean deleteFabric(String fabric_id) throws SQLException {
-        return CrudUtil.execute("delete from fabric where fabric_id=?", fabric_id);
-    }
-
     public ArrayList<String> getAllFabricIds() throws SQLException {
         ResultSet rst = CrudUtil.execute("select fabric_id from fabric");
 

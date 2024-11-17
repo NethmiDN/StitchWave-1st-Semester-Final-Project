@@ -1,5 +1,6 @@
 package lk.ijse.stitchwave1stsemesterfinalproject.model;
 
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.FabricDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.SupplierOrderDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 
@@ -20,6 +21,56 @@ public class SupplierOrderModel {
             return String.format("D%03d", newIdIndex); // Return the new order ID in format Dnnn
         }
         return "D001"; // Return the default order ID if no data is found
+    }
+
+    public boolean saveOrderWithFabrics(SupplierOrderDTO orderDTO, ArrayList<FabricDTO> fabrics) throws SQLException {
+        boolean transactionSuccess = false;
+
+        try {
+            CrudUtil.setAutoCommit(false);
+
+            boolean orderSaved = CrudUtil.execute(
+                    "INSERT INTO supplier_order (order_id, qty_kg ,date, supplier_id) VALUES (?, ?, ?, ?)",
+                    orderDTO.getOrder_id(),
+                    orderDTO.getQty_kg(),
+                    orderDTO.getDate(),
+                    orderDTO.getSupplier_id()
+            );
+
+            boolean fabricSaved = true;
+            for (FabricDTO fabric : fabrics) {
+                fabricSaved = CrudUtil.execute(
+                        "INSERT INTO fabric (fabric_id, color, weight_kg, width_inch) VALUES (?, ?, ?, ?)",
+                        fabric.getFabric_id(),
+                        fabric.getColor(),
+                        fabric.getWeight_kg(),
+                        fabric.getWidth_inch()
+                );
+
+                if (fabricSaved) {
+                    fabricSaved = CrudUtil.execute(
+                            "INSERT INTO fabric_order (fabric_id, order_id) VALUES (?, ?)",
+                            fabric.getFabric_id(),
+                            orderDTO.getOrder_id()
+                    );
+                }
+                if (!fabricSaved) break;
+            }
+
+            if (orderSaved && fabricSaved) {
+                CrudUtil.commit();
+                transactionSuccess = true;
+            } else {
+                CrudUtil.rollback();
+            }
+        } catch (SQLException e) {
+            CrudUtil.rollback();
+            e.printStackTrace();
+        } finally {
+            CrudUtil.setAutoCommit(true);
+        }
+
+        return transactionSuccess;
     }
 
     public boolean saveSupplierOrder(SupplierOrderDTO supplierOrderDTO) throws SQLException {

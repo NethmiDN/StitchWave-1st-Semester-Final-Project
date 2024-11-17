@@ -14,6 +14,8 @@ import lk.ijse.stitchwave1stsemesterfinalproject.dto.CustomerDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.CustomerTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.model.CustomerModel;
 import lk.ijse.stitchwave1stsemesterfinalproject.db.DBConnection;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -104,7 +106,6 @@ public class CustomerFormController implements Initializable {
 
         dltbtn.setDisable(true);
         updatebtn.setDisable(true);
-        reportbtn.setDisable(true);
     }
 
     private void refreshTable() throws SQLException {
@@ -153,7 +154,6 @@ public class CustomerFormController implements Initializable {
 
             dltbtn.setDisable(false);
             updatebtn.setDisable(false);
-            reportbtn.setDisable(false);
         }
     }
 
@@ -246,7 +246,7 @@ public class CustomerFormController implements Initializable {
 
     @FXML
     void reportbtnOnAction(ActionEvent event) {
-       /* try {
+        try {
             Connection connection = DBConnection.getInstance().getConnection();
 
 //            Map<String, Object> parameters = new HashMap<>();
@@ -269,7 +269,7 @@ public class CustomerFormController implements Initializable {
 
             // Compile the Jasper report from a JRXML file (report template)
             // The report template is located in the "resources/report" folder of the project
-            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/report/Blank_A4_4.jrxml"));
+            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/report/Customer.jrxml"));
 
             // Fill the report with the compiled report object, parameters, and a database connection
             // This prepares the report with real data from the database
@@ -288,6 +288,6 @@ public class CustomerFormController implements Initializable {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Data empty..!");
             e.printStackTrace();
-        }*/
+        }
     }
 }

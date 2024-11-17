@@ -83,9 +83,11 @@ CREATE TABLE clothes_order (
 
 );
 
+
+drop table fabric_order;
 CREATE TABLE fabric_order (
                               fabric_id VARCHAR(6),
                               order_id VARCHAR(6),
                               FOREIGN KEY (fabric_id) REFERENCES fabric(fabric_id) ON UPDATE CASCADE ON DELETE CASCADE,
-                              FOREIGN KEY (order_id) REFERENCES orders(order_id) ON UPDATE CASCADE ON DELETE CASCADE
+                              FOREIGN KEY (order_id) REFERENCES supplier_order(order_id) ON UPDATE CASCADE ON DELETE CASCADE
 );

@@ -110,7 +110,7 @@ public class StyleFormController implements Initializable {
         stockidclmn.setCellValueFactory(new PropertyValueFactory<>("stock_id"));
 
         try {
-            loadEmployeeIds();
+            loademployee_ids();
             loadStockIds();
             refreshPage();
         } catch (SQLException e) {
@@ -281,10 +281,10 @@ public class StyleFormController implements Initializable {
         }
     }
 
-    private void loadEmployeeIds() throws SQLException {
-        ArrayList<String> employeeIds = employeeModel.getAllEmployeeIds();
+    private void loademployee_ids() throws SQLException {
+        ArrayList<String> employee_ids = employeeModel.getAllemployee_ids();
         ObservableList<String> observableList = FXCollections.observableArrayList();
-        observableList.addAll(employeeIds);
+        observableList.addAll(employee_ids);
         cmbempid.setItems(observableList);
     }
 

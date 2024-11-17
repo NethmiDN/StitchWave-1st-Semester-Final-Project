@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EmployeeModel {
-    public String getNextEmployeeId() throws SQLException {
+    public String getNextemployee_id() throws SQLException {
         ResultSet rst = CrudUtil.execute("select employee_id from employee order by employee_id desc limit 1");
 
         if (rst.next()) {
@@ -55,20 +55,20 @@ public class EmployeeModel {
         );
     }
 
-    public boolean deleteEmployee(String employeeId) throws SQLException {
-        return CrudUtil.execute("delete from employee where employee_id=?", employeeId);
+    public boolean deleteEmployee(String employee_id) throws SQLException {
+        return CrudUtil.execute("delete from employee where employee_id=?", employee_id);
     }
 
-    public ArrayList<String> getAllEmployeeIds() throws SQLException {
+    public ArrayList<String> getAllemployee_ids() throws SQLException {
         ResultSet rst = CrudUtil.execute("select employee_id from employee");
 
-        ArrayList<String> employeeIds = new ArrayList<>();
+        ArrayList<String> employee_ids = new ArrayList<>();
 
         while (rst.next()) {
-            employeeIds.add(rst.getString(1));
+            employee_ids.add(rst.getString(1));
         }
 
-        return employeeIds;
+        return employee_ids;
     }
 
     public EmployeeDTO findById(String selectedEmpId) throws SQLException {

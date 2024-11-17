@@ -12,6 +12,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
@@ -26,13 +28,19 @@ public class DashboardFormController implements Initializable {
     private AnchorPane ap;
 
     @FXML
+    private ImageView settingbtn;
+
+    @FXML
+    private ImageView homebtn;
+
+    @FXML
     private Button clothesorderdetailbtn, customerbtn, empbtn, fabricbtn,
-            fabricorderdetailbtn, paymentbtn, sewnclothesstockbtn,
-            stylebtn, supplierbtn, supplierorderbtn, settingbtn;
+            paymentbtn, sewnclothesstockbtn,
+            stylebtn, supplierbtn, supplierorderbtn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        navigateTo("/view/EmployeeForm.fxml");
+        navigateTo("/view/Home.fxml");
         initializeButtonEffect(empbtn);
         initializeButtonEffect(customerbtn);
         initializeButtonEffect(paymentbtn);
@@ -42,8 +50,6 @@ public class DashboardFormController implements Initializable {
         initializeButtonEffect(sewnclothesstockbtn);
         initializeButtonEffect(supplierbtn);
         initializeButtonEffect(supplierorderbtn);
-        initializeButtonEffect(fabricorderdetailbtn);
-        initializeButtonEffect(settingbtn);
 
         onButtonClicked(empbtn);
         setButtonSizes();
@@ -85,8 +91,6 @@ public class DashboardFormController implements Initializable {
         sewnclothesstockbtn.setPrefSize(buttonWidth, buttonHeight);
         supplierbtn.setPrefSize(buttonWidth, buttonHeight);
         supplierorderbtn.setPrefSize(buttonWidth, buttonHeight);
-        fabricorderdetailbtn.setPrefSize(buttonWidth, buttonHeight);
-        settingbtn.setPrefSize(buttonWidth, buttonHeight);
     }
 
     private void setActiveButtonStyle(Button activeButton) {
@@ -119,13 +123,15 @@ public class DashboardFormController implements Initializable {
         sewnclothesstockbtn.setStyle(resetStyle);
         supplierbtn.setStyle(resetStyle);
         supplierorderbtn.setStyle(resetStyle);
-        fabricorderdetailbtn.setStyle(resetStyle);
-        settingbtn.setStyle(resetStyle);
     }
 
     private void onButtonClicked(Button selectedButton) {
         resetButtonStyles();
         setActiveButtonStyle(selectedButton);
+    }
+
+    private void onButtonClickeda(ImageView selectedButton) {
+        resetButtonStyles();
     }
 
     @FXML
@@ -148,14 +154,8 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     private void fabricbtnOnAction(ActionEvent event) {
-        navigateTo("/view/FabricForm.fxml");
+        navigateTo("/view/FabricOrderForm.fxml");
         onButtonClicked(fabricbtn);
-    }
-
-    @FXML
-    private void fabricorderdetailbtnOnAction(ActionEvent event) {
-        navigateTo("/view/FabricOrderDetailsForm.fxml");
-        onButtonClicked(fabricorderdetailbtn);
     }
 
     @FXML
@@ -189,9 +189,15 @@ public class DashboardFormController implements Initializable {
     }
 
     @FXML
-    void settingbtnOnAction(ActionEvent event) {
+    void settingbtnOnAction(MouseEvent event) {
         navigateTo("/view/SettingForm.fxml");
-        onButtonClicked(settingbtn);
+        onButtonClickeda(settingbtn);
+    }
+
+    @FXML
+    void homebtnOnAction(MouseEvent event) {
+        navigateTo("/view/Home.fxml");
+        onButtonClickeda(homebtn);
     }
 
     private void navigateTo(String fxmlPath) {
