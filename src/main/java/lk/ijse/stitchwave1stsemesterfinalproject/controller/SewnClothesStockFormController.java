@@ -79,6 +79,19 @@ public class SewnClothesStockFormController implements Initializable {
     FabricModel fabricModel = new FabricModel();
     SewnClothesStockModel sewnClothesStockModel = new SewnClothesStockModel();
 
+   /* public void sendAlert() throws SQLException {
+
+        boolean isLowStock = sewnClothesStockModel.chechStock();
+
+        if (isLowStock) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Low Stock Warning");
+            alert.setHeaderText("Your stock is running low!");
+            alert.setContentText("Some items in your stock are below 5000. Please restock soon.");
+            refreshPage();
+        }
+    }*/
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idclmn.setCellValueFactory(new PropertyValueFactory<>("stock_id"));
         qtyclmn.setCellValueFactory(new PropertyValueFactory<>("qty"));
@@ -206,7 +219,6 @@ public class SewnClothesStockFormController implements Initializable {
         String quantityPattern = "^([1-9]\\d{0,4}|0)$";
 
         boolean isValidQty = String.valueOf(qty).matches(String.valueOf(quantityPattern));
-
 
         qtytxt.setStyle(qtytxt.getStyle() + ";-fx-border-color:  #091057;");
 

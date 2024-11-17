@@ -47,8 +47,7 @@ public class CustomerModel {
     }
 
     public boolean updateCustomer(CustomerDTO customerDTO) throws SQLException {
-        return CrudUtil.execute(
-                "update customer set name=?, contact=? where customer_id=?",
+        return CrudUtil.execute("update customer set name=?, contact=? where customer_id=?",
                 customerDTO.getName(),
                 customerDTO.getContact(),
                 customerDTO.getCustomer_id()

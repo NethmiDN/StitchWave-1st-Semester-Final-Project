@@ -3,11 +3,13 @@ package lk.ijse.stitchwave1stsemesterfinalproject.model;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.SewnClothesStockDTO;
 import lk.ijse.stitchwave1stsemesterfinalproject.util.CrudUtil;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class SewnClothesStockModel {
+
     public String getNextStockId() throws SQLException {
         ResultSet rst = CrudUtil.execute("select stock_id from sewn_clothes_stock order by stock_id desc limit 1");
 
@@ -58,6 +60,10 @@ public class SewnClothesStockModel {
     public boolean deleteStock(String stock_id) throws SQLException {
         return CrudUtil.execute("delete from sewn_clothes_stock where stock_id=?", stock_id);
     }
+
+   /* public boolean chechStock() throws SQLException {
+        return CrudUtil.execute("SELECT count(*) FROM sewn_clothes_stock WHERE qty < 5000");
+    }*/
 
     public ArrayList<String> getAllStockIds() throws SQLException {
         ResultSet rst = CrudUtil.execute("select stock_id from sewn_clothes_stock");
