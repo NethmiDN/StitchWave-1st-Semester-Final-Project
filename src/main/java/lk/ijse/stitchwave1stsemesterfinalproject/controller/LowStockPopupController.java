@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.FabricTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.dto.tm.SewnClothesStockTM;
 import lk.ijse.stitchwave1stsemesterfinalproject.model.SewnClothesStockModel;
 
@@ -14,13 +15,13 @@ import java.util.Map;
 
 public class LowStockPopupController {
     @FXML
-    private TableColumn<?, ?> colFabric;
+    private TableColumn<FabricTM, String> colFabric;
 
     @FXML
-    private TableColumn<?, ?> colQty;
+    private TableColumn<SewnClothesStockTM, Integer> colQty;
 
     @FXML
-    private TableColumn<?, ?> colStockId;
+    private TableColumn<SewnClothesStockTM, String> colStockId;
 
     @FXML
     private TableView<SewnClothesStockTM> stockTable;
