@@ -21,6 +21,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.*;
 
 public class CustomerFormController implements Initializable {
@@ -193,7 +194,6 @@ public class CustomerFormController implements Initializable {
         // Save customer if all fields are valid
         if (isValidName && isValidContact) {
             CustomerDTO customerDTO = new CustomerDTO(customer_id, name, contact);
-
             boolean isSaved = customerModel.saveCustomer(customerDTO);
 
             if (isSaved) {
@@ -264,12 +264,12 @@ public class CustomerFormController implements Initializable {
 
             // Put the current date into the map with two different keys ("today" and "TODAY")
             // You can refer to these keys in the Jasper report if needed
-            parameters.put("today", LocalDate.now().toString());
-            parameters.put("TODAY", LocalDate.now().toString());
+            parameters.put("todayDate", LocalDate.now().toString());
+            parameters.put("time", LocalTime.now().toString());
 
             // Compile the Jasper report from a JRXML file (report template)
             // The report template is located in the "resources/report" folder of the project
-            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/report/Customer.jrxml"));
+            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/report/CustomerReportNew.jrxml"));
 
             // Fill the report with the compiled report object, parameters, and a database connection
             // This prepares the report with real data from the database
