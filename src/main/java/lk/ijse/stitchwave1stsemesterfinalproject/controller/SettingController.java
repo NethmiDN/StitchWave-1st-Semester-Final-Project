@@ -157,6 +157,22 @@ public class SettingController implements Initializable {
         emailtxt.setStyle(emailtxt.getStyle() + ";-fx-border-color:  #091057;");
         passwordtxt.setStyle(passwordtxt.getStyle() + ";-fx-border-color:  #091057;");
 
+        if(!isValidFname){
+            fnametxt.setStyle(fnametxt.getStyle() + ";-fx-border-color: red;");
+        }
+        if(!isValidLname){
+            lnametxt.setStyle(lnametxt.getStyle() + ";-fx-border-color: red;");
+        }
+        if(!isValidUname){
+            unametxt.setStyle(unametxt.getStyle() + ";-fx-border-color: red;");
+        }
+        if (!isValidEmail){
+            emailtxt.setStyle(emailtxt.getStyle() + ";-fx-border-color: red;");
+        }
+        if (!isValidPassword){
+            passwordtxt.setStyle(passwordtxt.getStyle() + ";-fx-border-color: red;");
+        }
+
         if (isValidFname && isValidLname && isValidUname && isValidEmail && isValidPassword){
             UserDTO userDTO = new UserDTO(userId, firstName, lastName, username, email, password);
 
