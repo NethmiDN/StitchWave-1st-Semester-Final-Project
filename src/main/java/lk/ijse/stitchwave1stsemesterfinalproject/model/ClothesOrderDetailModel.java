@@ -106,3 +106,17 @@ public class ClothesOrderDetailModel {
         return transactionSuccess;
     }
 }
+
+
+/*
+ String query = """
+                SELECT o.order_id, o.date, co.stock_id, o.qty,
+                       c.customer_id, c.name AS customer_name,
+                       p.payment_id, p.amount AS payment_amount
+                FROM orders o
+                JOIN clothes_order co ON o.order_id = co.order_id
+                JOIN sewn_clothes_stock sc ON co.stock_id = sc.stock_id
+                JOIN customer c ON o.customer_id = c.customer_id
+                JOIN payment p ON o.payment_id = p.payment_id;
+                """;
+ */
